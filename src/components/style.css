@@ -1,0 +1,7 @@
+.ui.menu:first-child {
+  font-size: 1.2rem;
+}
+
+.ui.cards>.card {
+  display: inline-block;
+}
