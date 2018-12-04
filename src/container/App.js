@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import MenuExampleStackable from '../components/NavBar';
-import CardExampleImageCard from '../components/Cards';
+import BookCard from '../components/BookCard';
+import AuthorCard from '../components/AuthorCard';
 import './App.css';
 
 class App extends Component {
@@ -8,8 +9,8 @@ class App extends Component {
     return (
       <React.Fragment>
        <MenuExampleStackable />
-       <CardExampleImageCard />
-       <CardExampleImageCard />
+       <BookCard />
+       <AuthorCard />
       </React.Fragment>
     );
   }
