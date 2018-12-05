@@ -3,7 +3,7 @@
 -Filter by genre <br />
 -View links to a certain book or author
 # and allows teachers to: 
--add/edit/delete books/authors.
+-Add/edit/delete books and authors
 
 In progress: Made with React, Semantic-UI, Node.js Express, PostgreSQL, Knex. 
 
