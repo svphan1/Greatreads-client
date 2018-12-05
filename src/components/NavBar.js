@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./style.css";
+import logo from '../images/betterlogo.png';
 import { Menu } from "semantic-ui-react";
 import Home from "./Home/Home";
 import Books from "./Books/Books";
@@ -19,7 +20,7 @@ class NavMenu extends Component {
         <Router>
           <Menu stackable>
             <Menu.Item>
-              <img src="https://react.semantic-ui.com/logo.png" />
+              <img src={logo} />
             </Menu.Item>
 
             <Menu.Item
@@ -39,7 +40,7 @@ class NavMenu extends Component {
               active={activeItem === "Books"}
               onClick={this.handleItemClick}
             >
-              <a href="/books">Books</a>
+            Books
             </Menu.Item>
 
             <Menu.Item
@@ -49,10 +50,10 @@ class NavMenu extends Component {
               active={activeItem === "Authors"}
               onClick={this.handleItemClick}
             >
-              <a href="/authors">Authors</a>
+              Authors
             </Menu.Item>
           </Menu>
-          
+
           <Route 
             path="/books"
             render={() => <Books/>}

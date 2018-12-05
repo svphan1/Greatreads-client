@@ -7,3 +7,11 @@
   margin: 13% auto !important;
   margin-left: 20% !important;
 }
+
+.header {
+  text-align: center;
+}
+
+.item>img {
+  border-radius: 10px !important;
+}

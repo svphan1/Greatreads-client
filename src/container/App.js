@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import NavMenu from "../components/NavBar";
-import BookCard from "../components/BookCard";
-import AuthorCard from "../components/AuthorCard";
+import StudentsCard from "../components/StudentCard";
+import TeacherCard from "../components/TeacherCard";
 import { BrowserRouter as Router } from "react-router-dom";
 import "./App.css";
 
@@ -11,8 +11,8 @@ class App extends Component {
       <Router>
         <React.Fragment>
           <NavMenu />
-          <BookCard />
-          <AuthorCard />
+          <StudentsCard />
+          <TeacherCard />
         </React.Fragment>
       </Router>
     );

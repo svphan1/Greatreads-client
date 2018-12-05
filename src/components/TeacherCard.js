@@ -1,13 +1,13 @@
 import React from 'react';
 import "./style.css";
-import image from '../images/books.jpg';
+import image from '../images/teacher.png';
 import { Card, Image } from 'semantic-ui-react';
 
-const BookCard = (props) => (
-  <Card onclick={props.clicked}>
+const BookCard = () => (
+  <Card>
     <Image src={image} />
     <Card.Content>
-      <Card.Header>Books</Card.Header>
+      <Card.Header>Teacher</Card.Header>
     </Card.Content>
   </Card>
 )
