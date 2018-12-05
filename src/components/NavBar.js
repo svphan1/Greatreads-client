@@ -2,12 +2,11 @@ import React, { Component } from "react";
 import "./style.css";
 import logo from "../images/greatreads.jpg";
 import { Input, Menu } from "semantic-ui-react";
-import Home from "./Home/Home";
-import Books from "./Books/Books";
+import BookCard from "./Books/BookCard";
 import Authors from "./Authors/Authors";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-class NavBar2 extends Component {
+class NavBar extends Component {
   state = { activeItem: "home" };
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name });
@@ -28,14 +27,14 @@ class NavBar2 extends Component {
               name="home"
               to="/"
               active={activeItem === "home"}
-              onClick={this.handleItemClick}
+              onClick={window.location.reload}
             />
             <Menu.Item
               as= { Link }
               name="Books"
               to="/books"
               active={activeItem === "Books"}
-              onClick={this.handleItemClick}
+              onClick={this.hideLogin}
             />
             <Menu.Item
               as={ Link }
@@ -57,7 +56,7 @@ class NavBar2 extends Component {
               />
             </Menu.Menu>
           </Menu>
-          <Route path="/books" render={() => <Books />} />
+          <Route path="/books" render={() => <BookCard />} />
           <Route path="/authors" render={() => <Authors />} />
         </Router>
       </React.Fragment>
@@ -65,4 +64,4 @@ class NavBar2 extends Component {
   }
 }
 
-export default NavBar2;
+export default NavBar;

@@ -3,8 +3,8 @@ import "./style.css";
 import image from '../images/teacher.png';
 import { Card, Image } from 'semantic-ui-react';
 
-const BookCard = () => (
-  <Card>
+const TeacherCard = ({ teacherHandler }) => (
+  <Card onClick={ teacherHandler }>
     <Image src={image} />
     <Card.Content>
       <Card.Header>Teacher</Card.Header>
@@ -12,4 +12,4 @@ const BookCard = () => (
   </Card>
 )
 
-export default BookCard;
+export default TeacherCard;

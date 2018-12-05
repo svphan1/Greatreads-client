@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 import "./style.css";
-import image from '../images/student.png';
-import { Card, Image } from 'semantic-ui-react';
+import image from "../images/student.png";
+import { Card, Image } from "semantic-ui-react";
 
-const BookCard = (props) => (
-  <Card onclick={props.clicked}>
+const StudentCard = ({ studentHandler }) => (
+  <Card onClick={ studentHandler }>
     <Image src={image} />
     <Card.Content>
       <Card.Header>Students</Card.Header>
@@ -12,4 +12,4 @@ const BookCard = (props) => (
   </Card>
 )
 
-export default BookCard;
+export default StudentCard;
