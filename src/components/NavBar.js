@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import "./style.css";
 import { Menu } from "semantic-ui-react";
+import Home from "./Home/Home";
+import Books from "./Books/Books";
+import Authors from "./Authors/Authors";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 class NavMenu extends Component {
   state = {};
@@ -12,35 +16,52 @@ class NavMenu extends Component {
 
     return (
       <React.Fragment>
-        <Menu stackable>
-          <Menu.Item>
-            <img src="https://react.semantic-ui.com/logo.png" />
-          </Menu.Item>
+        <Router>
+          <Menu stackable>
+            <Menu.Item>
+              <img src="https://react.semantic-ui.com/logo.png" />
+            </Menu.Item>
 
-          <Menu.Item
-            name="features"
-            active={activeItem === "features"}
-            onClick={this.handleItemClick}
-          >
-            Home
-          </Menu.Item>
+            <Menu.Item
+              as={Link}
+              name="Home"
+              to="/"
+              active={activeItem === "features"}
+              onClick={this.handleItemClick}
+            >
+              Home
+            </Menu.Item>
 
-          <Menu.Item
-            name="testimonials"
-            active={activeItem === "testimonials"}
-            onClick={this.handleItemClick}
-          >
-            <a href="/books">Books</a>
-          </Menu.Item>
+            <Menu.Item
+              as={Link}
+              name="Books"
+              to="/books"
+              active={activeItem === "Books"}
+              onClick={this.handleItemClick}
+            >
+              <a href="/books">Books</a>
+            </Menu.Item>
 
-          <Menu.Item
-            name="sign-in"
-            active={activeItem === "sign-in"}
-            onClick={this.handleItemClick}
-          >
-            <a href="/authors">Authors</a>
-          </Menu.Item>
-        </Menu>
+            <Menu.Item
+              as={Link}
+              name="Authors"
+              to="/authors"
+              active={activeItem === "Authors"}
+              onClick={this.handleItemClick}
+            >
+              <a href="/authors">Authors</a>
+            </Menu.Item>
+          </Menu>
+          
+          <Route 
+            path="/books"
+            render={() => <Books/>}
+          />
+          <Route 
+            path="/authors"
+            render={() => <Authors/>}
+          />
+        </Router>
       </React.Fragment>
     );
   }
