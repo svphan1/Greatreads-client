@@ -30,7 +30,7 @@ class MenuExampleStackable extends Component {
             active={activeItem === "testimonials"}
             onClick={this.handleItemClick}
           >
-            Books
+            <a href="/books">Books</a>
           </Menu.Item>
 
           <Menu.Item
@@ -38,7 +38,7 @@ class MenuExampleStackable extends Component {
             active={activeItem === "sign-in"}
             onClick={this.handleItemClick}
           >
-            Authors
+            <a href="/authors">Authors</a>
           </Menu.Item>
         </Menu>
       </React.Fragment>

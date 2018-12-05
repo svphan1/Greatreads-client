@@ -1,7 +1,7 @@
 import React from 'react';
 import "./style.css";
 import image from '../images/authors.jpg';
-import { Card, Icon, Image } from 'semantic-ui-react';
+import { Card, Image } from 'semantic-ui-react';
 
 const BookCard = () => (
   <Card>
