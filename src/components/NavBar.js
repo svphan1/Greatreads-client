@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import "./style.css";
-import logo from '../images/betterlogo.png';
-import { Menu } from "semantic-ui-react";
+import logo from "../images/betterlogo.png";
+import { Input, Menu } from "semantic-ui-react";
 import Home from "./Home/Home";
 import Books from "./Books/Books";
 import Authors from "./Authors/Authors";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-class NavMenu extends Component {
-  state = {};
+class NavBar2 extends Component {
+  state = { activeItem: "home" };
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name });
 
@@ -18,54 +18,51 @@ class NavMenu extends Component {
     return (
       <React.Fragment>
         <Router>
-          <Menu stackable>
+          <Menu secondary stackable>
             <Menu.Item>
               <img src={logo} />
             </Menu.Item>
 
             <Menu.Item
-              as={Link}
-              name="Home"
+              as= { Link }
+              name="home"
               to="/"
-              active={activeItem === "features"}
+              active={activeItem === "home"}
               onClick={this.handleItemClick}
-            >
-              Home
-            </Menu.Item>
-
+            />
             <Menu.Item
-              as={Link}
+              as= { Link }
               name="Books"
               to="/books"
               active={activeItem === "Books"}
               onClick={this.handleItemClick}
-            >
-            Books
-            </Menu.Item>
-
+            />
             <Menu.Item
-              as={Link}
+              as={ Link }
               name="Authors"
               to="/authors"
               active={activeItem === "Authors"}
               onClick={this.handleItemClick}
-            >
-              Authors
-            </Menu.Item>
+            />
+            <Menu.Menu position="right">
+              <Menu.Item>
+                <Input icon="search" placeholder="Search..." />
+              </Menu.Item>
+              <Menu.Item
+                as={ Link }
+                name="logout"
+                to="/"
+                active={activeItem === "logout"}
+                onClick={this.handleItemClick}
+              />
+            </Menu.Menu>
           </Menu>
-
-          <Route 
-            path="/books"
-            render={() => <Books/>}
-          />
-          <Route 
-            path="/authors"
-            render={() => <Authors/>}
-          />
+          <Route path="/books" render={() => <Books />} />
+          <Route path="/authors" render={() => <Authors />} />
         </Router>
       </React.Fragment>
     );
   }
 }
 
-export default NavMenu;
+export default NavBar2;

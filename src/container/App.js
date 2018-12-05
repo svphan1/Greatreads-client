@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import NavMenu from "../components/NavBar";
+import NavBar from "../components/NavBar";
 import StudentsCard from "../components/StudentCard";
 import TeacherCard from "../components/TeacherCard";
 import { BrowserRouter as Router } from "react-router-dom";
@@ -10,7 +10,7 @@ class App extends Component {
     return (
       <Router>
         <React.Fragment>
-          <NavMenu />
+          <NavBar />
           <StudentsCard />
           <TeacherCard />
         </React.Fragment>
