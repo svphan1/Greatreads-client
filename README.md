@@ -1,3 +1,13 @@
+# Better Reads is an application that allows students to:
+-search for books by name and author
+-filter by genre
+-view links to a certain book or author
+## and allows teachers to: 
+-add/edit/delete books/authors
+
+Made with React, Semantic-UI, Node.js Express, PostgreSQL, Knex. 
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
