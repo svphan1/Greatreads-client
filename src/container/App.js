@@ -5,12 +5,22 @@ import TeacherCard from "../components/TeacherCard";
 import BookCard from "../components/Books/BookCard";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Message } from "semantic-ui-react";
+import axios from 'axios';
 import "./App.css";
 
 class App extends Component {
   state = {
-    showMainCards: true,
+    books: '',
+    authors: [],
+    showMainCards: true
   }
+
+  componentDidMount() {
+    axios.get("http://localhost:3000/books")
+    .then( response => {
+      this.setState({ books: response.data.books })
+    })
+  };
 
   studentHandler = () => {
     const doesShow = this.state.showMainCards
@@ -28,11 +38,13 @@ class App extends Component {
   }
 
   render() {
+    console.log('books', this.state.books)
+    console.log('authors', this.state.authors)
     return (
       <Router>
         <React.Fragment>
           <NavBar />
-          
+
           { this.state.showMainCards ?
           <div>
           <Message warning>
@@ -41,7 +53,7 @@ class App extends Component {
           </Message>
           <StudentsCard studentHandler={this.studentHandler}/>
           <TeacherCard teacherHandler={this.teacherHandler}/> 
-          </div> : <BookCard/> }
+          </div> : <BookCard books={this.state.books}/> }
            
         </React.Fragment>
       </Router>
