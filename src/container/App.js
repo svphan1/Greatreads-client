@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import MenuExampleStackable from "../components/NavBar";
+import NavMenu from "../components/NavBar";
 import BookCard from "../components/BookCard";
 import AuthorCard from "../components/AuthorCard";
-import { BrowserRouter as Router } from "react-router-rom";
+import { BrowserRouter as Router } from "react-router-dom";
 import "./App.css";
 
 class App extends Component {
@@ -10,7 +10,7 @@ class App extends Component {
     return (
       <Router>
         <React.Fragment>
-          <MenuExampleStackable />
+          <NavMenu />
           <BookCard />
           <AuthorCard />
         </React.Fragment>

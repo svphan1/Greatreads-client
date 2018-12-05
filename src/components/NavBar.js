@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./style.css";
 import { Menu } from "semantic-ui-react";
 
-class MenuExampleStackable extends Component {
+class NavMenu extends Component {
   state = {};
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name });
@@ -46,4 +46,4 @@ class MenuExampleStackable extends Component {
   }
 }
 
-export default MenuExampleStackable;
+export default NavMenu;
