@@ -5,7 +5,7 @@
 # and allows teachers to: 
 -Add/edit/delete books and authors
 
-In progress: Made with React, Semantic-UI, Node.js Express, PostgreSQL, Knex. 
+In progress: Made with React, Semantic-UI, Node.js, Express, PostgreSQL, Knex. 
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
