@@ -6,14 +6,7 @@ import BookCard from "./Books/BookCard";
 import AuthorCard from "./Authors/AuthorCard";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-class NavBar extends Component {
-  state = { activeItem: "home" };
-
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name });
-
-  render() {
-    const { activeItem, books } = this.state;
-
+const NavBar = ({ books, authors }) => {
     return (
       <React.Fragment>
         <Router>
@@ -21,27 +14,23 @@ class NavBar extends Component {
             <Menu.Item>
               <img src={logo} />
             </Menu.Item>
-
             <Menu.Item
               as= { Link }
               name="home"
               to="/"
-              active={activeItem === "home"}
               onClick={window.location.reload}
             />
             <Menu.Item
               as= { Link }
               name="Books"
               to="/books"
-              active={activeItem === "Books"}
-              onClick={this.hideLogin}
+              // onClick={this.handleItemClick}
             />
             <Menu.Item
               as={ Link }
               name="Authors"
               to="/authors"
-              active={activeItem === "Authors"}
-              onClick={this.handleItemClick}
+              // onClick={this.handleItemClick}
             />
             <Menu.Menu position="right">
               <Menu.Item>
@@ -51,17 +40,15 @@ class NavBar extends Component {
                 as={ Link }
                 name="logout"
                 to="/"
-                active={activeItem === "logout"}
-                onClick={this.handleItemClick}
+                onClick={window.location.reload}
               />
             </Menu.Menu>
           </Menu>
           <Route path="/books" render={() => <BookCard books={books}/>} />
-          <Route path="/authors" render={() => <AuthorCard />} />
+          <Route path="/authors" render={() => <AuthorCard authors={authors}/>} />
         </Router>
       </React.Fragment>
     );
   }
-}
 
 export default NavBar;

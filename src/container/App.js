@@ -10,16 +10,37 @@ import "./App.css";
 
 class App extends Component {
   state = {
-    books: "",
-    authors: [],
+    books: '',
+    authors: '',
     showMainCards: true
   };
 
-  componentDidMount() {
-    axios.get("http://localhost:3000/books").then(response => {
-      this.setState({ books: response.data.books });
-    });
-  }
+  // componentDidMount() {
+  //   axios.get("http://localhost:3000/books")
+  //   .then(response => {
+  //     this.setState({ books: response.data.books });
+  //   })
+  //   .then(this.getAuthor)
+  // }
+
+  // getAuthors = () => {
+  //   fetch("http://localhost:3000/authors")
+  //   .then(response => {
+  //   this.setState({ authors: response.data.authors });
+  //   });
+  // }
+
+  componentDidMount(){
+    Promise.all([
+        fetch('http://localhost:3000/books'),
+        fetch('http://localhost:3000/authors')
+    ])
+    .then(([res1, res2]) => Promise.all([res1.json(), res2.json()]))
+    .then(([data1, data2]) => this.setState({
+        books: data1.books, 
+        authors: data2.authors
+    }));
+  } 
 
   studentHandler = () => {
     const doesShow = this.state.showMainCards;
@@ -42,7 +63,9 @@ class App extends Component {
     return (
       <Router>
         <React.Fragment>
-          <NavBar books={this.state.books} />
+          <NavBar 
+          books={this.state.books}
+          authors={this.state.authors} />
 
           {this.state.showMainCards ? (
             <div>

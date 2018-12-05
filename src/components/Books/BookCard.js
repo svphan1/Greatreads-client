@@ -8,7 +8,6 @@ const style = {
 };
 
 const BookCard = ({ books }) => {
-  // const bookList = books => {
     return books.map((book, id) => {
       return (
         <Card style={style.cardWidth} key={id}>
@@ -32,8 +31,6 @@ const BookCard = ({ books }) => {
         </Card>
       );
     });
-  // };
-  // return <div>{bookList(books)}</div>;
 };
 
 export default BookCard;
