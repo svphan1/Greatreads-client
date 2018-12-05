@@ -1,12 +1,32 @@
+body {
+  background: lemonchiffon;
+}
+
 .ui.menu:first-child {
   font-size: 1.2rem;
-  background: rgb(244, 241, 235);
+  background: white;
+}
+
+.item>img {
+  width: 8.5rem !important;
 }
 
 .ui.card {
   display: inline-block !important;
-  margin: 13% auto !important;
-  margin-left: 20% !important;
+  margin: 8% -12% !important;
+  margin-left: 24% !important;
+  box-shadow: 6px 3px 20px #ccc;
+}
+
+.ui.warning {
+  background-color: white !important;
+}
+
+.ui.message,
+.p {
+  width: 50% !important;
+  margin: 0 auto !important;
+  text-align: center;
 }
 
 .header {

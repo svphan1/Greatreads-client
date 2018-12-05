@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./style.css";
-import logo from "../images/betterlogo.png";
+import logo from "../images/greatreads.jpg";
 import { Input, Menu } from "semantic-ui-react";
 import Home from "./Home/Home";
 import Books from "./Books/Books";
