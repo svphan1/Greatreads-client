@@ -1,6 +1,6 @@
 import React from "react";
 
-const Authors = () => {
+const AuthorCard = () => {
   return (
     <React.Fragment>
       <h1>Authors</h1>
@@ -8,4 +8,4 @@ const Authors = () => {
   )
 }
 
-export default Authors;
+export default AuthorCard;

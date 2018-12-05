@@ -1,6 +1,5 @@
 import React from "react";
 import { Card, Icon, Image, Divider } from "semantic-ui-react";
-import student from "../../images/student.png";
 
 const style = {
   cardWidth: {
@@ -9,10 +8,10 @@ const style = {
 };
 
 const BookCard = ({ books }) => {
-  const bookList = books => {
+  // const bookList = books => {
     return books.map((book, id) => {
       return (
-        <Card style={style.cardWidth}>
+        <Card style={style.cardWidth} key={id}>
           <Image floated="left" size="small" src={book.coverUrl} />
           <Card.Content>
             <Card.Header>{book.title}</Card.Header>
@@ -33,8 +32,8 @@ const BookCard = ({ books }) => {
         </Card>
       );
     });
-  };
-  return <div>{bookList(books)}</div>;
+  // };
+  // return <div>{bookList(books)}</div>;
 };
 
 export default BookCard;

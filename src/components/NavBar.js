@@ -3,7 +3,7 @@ import "./style.css";
 import logo from "../images/greatreads.jpg";
 import { Input, Menu } from "semantic-ui-react";
 import BookCard from "./Books/BookCard";
-import Authors from "./Authors/Authors";
+import AuthorCard from "./Authors/AuthorCard";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 class NavBar extends Component {
@@ -12,7 +12,7 @@ class NavBar extends Component {
   handleItemClick = (e, { name }) => this.setState({ activeItem: name });
 
   render() {
-    const { activeItem } = this.state;
+    const { activeItem, books } = this.state;
 
     return (
       <React.Fragment>
@@ -56,8 +56,8 @@ class NavBar extends Component {
               />
             </Menu.Menu>
           </Menu>
-          <Route path="/books" render={() => <BookCard />} />
-          <Route path="/authors" render={() => <Authors />} />
+          <Route path="/books" render={() => <BookCard books={books}/>} />
+          <Route path="/authors" render={() => <AuthorCard />} />
         </Router>
       </React.Fragment>
     );
