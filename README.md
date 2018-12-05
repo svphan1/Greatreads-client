@@ -1,7 +1,7 @@
 # Better Reads is an application that allows students to:
--search for books by name and author.
--filter by genre.
--view links to a certain book or author.
+-Search for books by name and author <br />
+-Filter by genre
+-View links to a certain book or author
 # and allows teachers to: 
 -add/edit/delete books/authors.
 
