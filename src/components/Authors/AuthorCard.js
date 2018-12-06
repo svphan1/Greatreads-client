@@ -11,21 +11,25 @@ const AuthorCard = ({ authors }) => {
     return authors.map((author, id) => {
       return (
         <Card style={style.cardWidth} key={id}>
-          <Image floated="left" size="small" src={author.coverUrl} />
+          <Image floated="left" size="small" src={author.portraitUrl} />
           <Card.Content>
             <Card.Header>{author.firstName} {author.lastName}</Card.Header>
             <Divider />
             <Card.Content>
-              <Card.Description>Authors: {author.firstName}</Card.Description> <br />
               <Card.Description>
                 {author.biography}
-              </Card.Description>
+              </Card.Description> <br />
+              <Card.Description>Books: {author.firstName}</Card.Description> 
             </Card.Content>
           </Card.Content>
           <Card.Content extra>
             <a>
-              <Icon name="info" float="right" />
-              Details
+              <Icon name="edit" float="right" />
+              Edit
+            </a>
+            <a>
+              <Icon name="delete" float="right" />
+              Delete
             </a>
           </Card.Content>
         </Card>

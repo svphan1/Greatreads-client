@@ -5,16 +5,14 @@ import BookCard from "../components/Books/BookCard";
 import { Card, Image } from "semantic-ui-react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-const StudentCard = ({ studentHandler, books }) => (
-  <Router>
-    <Card onClick={studentHandler} as={Link} to="/books">
-      <Image src={image} />
-      <Card.Content>
-        <Card.Header>Students</Card.Header>
-      </Card.Content>
-    </Card>
+const StudentCard = ({ showBooksHandler, books }) => (
+  <Card onClick={showBooksHandler} as={Link} to="/books">
+    <Image src={image} />
+    <Card.Content>
+      <Card.Header>User</Card.Header>
+    </Card.Content>
     <Route path="/books" render={() => <BookCard books={books} />} />
-  </Router>
+  </Card>
 );
 
 export default StudentCard;

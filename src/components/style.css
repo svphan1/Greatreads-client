@@ -18,6 +18,10 @@ body {
   box-shadow: 6px 3px 20px #ccc;
 }
 
+.ui.card a {
+  margin-left: 27%;
+}
+
 .ui.warning {
   background-color: white !important;
 }

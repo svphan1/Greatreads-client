@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Icon, Image, Divider } from "semantic-ui-react";
+import { Card, Icon, Image, Divider, Message } from "semantic-ui-react";
 
 const style = {
   cardWidth: {
@@ -7,7 +7,7 @@ const style = {
   }
 };
 
-const BookCard = ({ books }) => {
+const BookCard = ({ books, deleteBook }) => {
     return books.map((book, id) => {
       return (
         <Card style={style.cardWidth} key={id}>
@@ -24,8 +24,12 @@ const BookCard = ({ books }) => {
           </Card.Content>
           <Card.Content extra>
             <a>
-              <Icon name="info" float="right" />
-              Details
+              <Icon name="edit" float="right" />
+              Edit
+            </a>
+            <a>
+              <Icon name="delete" float="right" onClick={deleteBook}/>
+              Delete Book
             </a>
           </Card.Content>
         </Card>
