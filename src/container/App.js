@@ -53,7 +53,6 @@ class App extends Component {
             showBooksHandler={this.showBooksHandler}
             deleteBook={this.deleteBook}
           />
-
           {this.state.showUserCards ? (
             <div>
               <Message warning>
@@ -68,8 +67,7 @@ class App extends Component {
                 showBooksHandler={this.showBooksHandler}
                 books={this.state.books}
               />
-            </div>
-          ) : null }
+            </div> ) : null }
         </React.Fragment>
       </Router>
     );
