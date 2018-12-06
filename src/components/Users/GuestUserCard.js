@@ -11,7 +11,6 @@ const GuestUserCard = ({ showBooksHandler, books }) => (
     <Card.Content>
       <Card.Header>Guest</Card.Header>
     </Card.Content>
-    {/* <Route path="/books" render={() => <BookCard books={books} />} /> */}
   </Card>
 )
 

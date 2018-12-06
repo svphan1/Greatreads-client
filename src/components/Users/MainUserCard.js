@@ -10,7 +10,6 @@ const MainUserCard = ({ showBooksHandler, books }) => (
     <Card.Content>
       <Card.Header>Son</Card.Header>
     </Card.Content>
-    {/* <Route path="/books" render={() => <BookCard books={ books } />} /> */}
   </Card>
 );
 

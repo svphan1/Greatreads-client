@@ -56,6 +56,15 @@ body {
   margin-left: 46%;
 }
 
+.ui.form {
+  border: 1px #ccc solid;
+  width: 50%;
+  margin: 0 auto;
+  padding: .5rem;
+  border-radius: .5rem;
+  background: lightgrey;
+}
+
 .header {
   text-align: center;
 }
