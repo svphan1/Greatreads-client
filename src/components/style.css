@@ -26,6 +26,10 @@ body {
   margin-left: 21.5% !important;
 }
 
+.ui.card>.image {
+  padding: .7rem !important;
+}
+
 .ui.card a {
   margin-left: 27%;
 }

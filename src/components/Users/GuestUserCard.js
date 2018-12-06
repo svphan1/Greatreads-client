@@ -1,6 +1,6 @@
 import React from 'react';
 import "../style.css";
-import image from '../../images/teacher.png';
+import image from '../../images/guest.png';
 import NavBar from "../NavBars/NavBar";
 import BookCard from "../Books/BookCard";
 import { Card, Image } from 'semantic-ui-react';
