@@ -1,10 +1,11 @@
-import React from "react";
-import BookHeader from "./BookHeader";
-import { Card, Icon, Image, Divider, Message } from "semantic-ui-react";
+import React from 'react';
+import BookHeader from './BookHeader';
+import BookAddForm from './BookAddform';
+import { Card, Icon, Image, Divider, Message } from 'semantic-ui-react';
 
 const style = {
   cardWidth: {
-    width: "50%"
+    width: '50%'
   }
 };
 
@@ -14,10 +15,10 @@ const BookCard = ({ books, deleteBook }) => {
       return (
         <Card style={style.cardWidth} key={id}>
           <Image
-            floated="left"
-            size="small"
+            floated='left'
+            size='small'
             src={book.coverUrl}
-            className="authorbook"
+            className='authorbook'
           />
           <Card.Content>
             <Card.Header>{book.title}</Card.Header>
@@ -30,12 +31,12 @@ const BookCard = ({ books, deleteBook }) => {
             </Card.Content>
           </Card.Content>
           <Card.Content extra>
-            <a href="/">
-              <Icon name="edit" float="right" />
+            <a href='/'>
+              <Icon name='edit' float='right' />
               Edit
             </a>
-            <a href="/">
-              <Icon name="delete" float="right" onClick={deleteBook} />
+            <a href='/'>
+              <Icon name='delete' float='right' onClick={deleteBook} />
               Delete Book
             </a>
           </Card.Content>
@@ -46,6 +47,7 @@ const BookCard = ({ books, deleteBook }) => {
   return (
     <React.Fragment>
       <BookHeader />
+      <BookAddForm />
       <section>{bookList(books)}</section>
     </React.Fragment>
   );
