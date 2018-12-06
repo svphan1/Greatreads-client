@@ -64,7 +64,6 @@ class App extends Component {
                 books={this.state.books}
               />
             </div> ) : null }
-            <BookAddForm/>
         </React.Fragment>
       </Router>
     );

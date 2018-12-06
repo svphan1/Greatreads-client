@@ -47,7 +47,7 @@ const BookCard = ({ books, deleteBook }) => {
   return (
     <React.Fragment>
       <BookHeader />
-      <BookAddForm />
+      {/* <BookAddForm /> */}
       <section>{bookList(books)}</section>
     </React.Fragment>
   );

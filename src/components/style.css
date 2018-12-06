@@ -54,6 +54,7 @@ body {
 .ui.basic.button {
   margin-top: 2rem;
   margin-left: 46%;
+  margin-bottom: 1rem;
 }
 
 .ui.form {
