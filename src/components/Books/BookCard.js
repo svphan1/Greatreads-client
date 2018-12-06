@@ -10,15 +10,15 @@ const style = {
 const BookCard = ({ books, deleteBook }) => {
     return books.map((book, id) => {
       return (
-        <Card style={style.cardWidth} key={id}>
-          <Image floated="left" size="small" src={book.coverUrl} />
+        <Card style={ style.cardWidth } key={ id }>
+          <Image floated="left" size="small" src={ book.coverUrl } />
           <Card.Content>
-            <Card.Header>{book.title}</Card.Header>
+            <Card.Header>{ book.title }</Card.Header>
             <Divider />
             <Card.Content>
-              <Card.Description>Authors: {book.title}</Card.Description> <br />
+              <Card.Description>Authors: { book.title }</Card.Description> <br />
               <Card.Description>
-                Description: {book.description}.
+                Description: { book.description }.
               </Card.Description>
             </Card.Content>
           </Card.Content>
@@ -28,7 +28,7 @@ const BookCard = ({ books, deleteBook }) => {
               Edit
             </a>
             <a>
-              <Icon name="delete" float="right" onClick={deleteBook}/>
+              <Icon name="delete" float="right" onClick={ deleteBook }/>
               Delete Book
             </a>
           </Card.Content>

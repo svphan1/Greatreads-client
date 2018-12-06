@@ -1,9 +1,9 @@
 import React from "react";
-import "./style.css";
-import logo from "../images/greatreads.jpg";
+import "../style.css";
+import logo from "../../images/greatreads.jpg";
 import { Input, Menu } from "semantic-ui-react";
-import BookCard from "./Books/BookCard";
-import AuthorCard from "./Authors/AuthorCard";
+import BookCard from "../Books/BookCard";
+import AuthorCard from "../Authors/AuthorCard";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 const NavBar = ({ books, authors, showBooksHandler, deleteBook}) => {
@@ -11,25 +11,25 @@ const NavBar = ({ books, authors, showBooksHandler, deleteBook}) => {
     <React.Fragment>
         <Menu secondary stackable>
           <Menu.Item>
-            <img src={logo} />
+            <img src={ logo } />
           </Menu.Item>
           <Menu.Item
-            as={Link}
+            as={ Link }
             name="home"
             to="/"
-            onClick={window.location.reload}
+            onClick={ window.location.reload }
           />
           <Menu.Item
             as={Link}
             name="Books"
             to="/books"
-            onClick={showBooksHandler}
+            onClick={ showBooksHandler }
           />
           <Menu.Item
             as={Link}
             name="Authors"
             to="/authors"
-            onClick={showBooksHandler}
+            onClick={ showBooksHandler }
           />
           <Menu.Menu position="right">
             <Menu.Item>
@@ -39,14 +39,14 @@ const NavBar = ({ books, authors, showBooksHandler, deleteBook}) => {
               as={Link}
               name="logout"
               to="/"
-              onClick={window.location.reload}
+              onClick={ window.location.reload }
             />
           </Menu.Menu>
         </Menu>
-        <Route path="/books" render={() => <BookCard books={books} deleteBook={deleteBook}/>} />
+        <Route path="/books" render={() => <BookCard books={ books } deleteBook={ deleteBook }/>} />
         <Route
           path="/authors"
-          render={() => <AuthorCard authors={authors} />}
+          render={() => <AuthorCard authors={ authors } />}
         />
     </React.Fragment>
   );
