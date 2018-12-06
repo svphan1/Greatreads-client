@@ -1,5 +1,5 @@
 import React from "react";
-import AuthorHeader from './AuthorHeader';
+import AuthorHeader from "./AuthorHeader";
 import { Card, Icon, Image, Divider } from "semantic-ui-react";
 
 const style = {
@@ -9,19 +9,24 @@ const style = {
 };
 
 const AuthorCard = ({ authors }) => {
-  const authorList = (authors) => {
+  const authorList = authors => {
     return authors.map((author, id) => {
       return (
-        <Card style={ style.cardWidth } key={ id }>
-          <Image floated="left" size="small" src={ author.portraitUrl } className="authorbook"/>
+        <Card style={style.cardWidth} key={id}>
+          <Image
+            floated="left"
+            size="small"
+            src={author.portraitUrl}
+            className="authorbook"
+          />
           <Card.Content>
-            <Card.Header>{ author.firstName } { author.lastName }</Card.Header>
+            <Card.Header>
+              {author.firstName} {author.lastName}
+            </Card.Header>
             <Divider />
             <Card.Content>
-              <Card.Description>
-                { author.biography }
-              </Card.Description> <br />
-              <Card.Description>Books: { author.firstName }</Card.Description> 
+              <Card.Description>{author.biography}</Card.Description> <br />
+              <Card.Description>Books: {author.firstName}</Card.Description>
             </Card.Content>
           </Card.Content>
           <Card.Content extra>
@@ -35,15 +40,15 @@ const AuthorCard = ({ authors }) => {
             </a>
           </Card.Content>
         </Card>
-      )
-    })
-}
-return (
-  <React.Fragment>
-    <AuthorHeader/>
-    <section>{authorList(authors)}</section>
-  </React.Fragment>
-)
+      );
+    });
+  };
+  return (
+    <React.Fragment>
+      <AuthorHeader />
+      <section>{authorList(authors)}</section>
+    </React.Fragment>
+  );
 };
 
 export default AuthorCard;

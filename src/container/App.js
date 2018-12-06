@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
-import NavBar from '../components/NavBars/NavBar';
-import NavBarMain from '../components/NavBars/NavBarMain';
-import BookAddForm from '../components/Books/BookAddForm';
-import MainUserCard from '../components/Users/MainUserCard';
-import GuestUserCard from '../components/Users/GuestUserCard';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import { Message } from 'semantic-ui-react';
-import './App.css';
+import React, { Component } from "react";
+import NavBar from "../components/NavBars/NavBar";
+import NavBarMain from "../components/NavBars/NavBarMain";
+import BookAddForm from "../components/Books/BookAddForm";
+import MainUserCard from "../components/Users/MainUserCard";
+import GuestUserCard from "../components/Users/GuestUserCard";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Message } from "semantic-ui-react";
+import "./App.css";
 
 class App extends Component {
   state = {
@@ -17,8 +17,8 @@ class App extends Component {
 
   componentDidMount() {
     Promise.all([
-      fetch('http://localhost:3000/books'),
-      fetch('http://localhost:3000/authors')
+      fetch("http://localhost:3000/books"),
+      fetch("http://localhost:3000/authors")
     ])
       .then(([res1, res2]) => Promise.all([res1.json(), res2.json()]))
       .then(([data1, data2]) =>
@@ -35,8 +35,8 @@ class App extends Component {
     });
   };
 
-  deleteBook = (e) => {
-    e.preventDefault()
+  deleteBook = e => {
+    e.preventDefault();
   };
 
   render() {
@@ -63,7 +63,8 @@ class App extends Component {
                 showBooksHandler={this.showBooksHandler}
                 books={this.state.books}
               />
-            </div> ) : null }
+            </div>
+          ) : null}
         </React.Fragment>
       </Router>
     );
