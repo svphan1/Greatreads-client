@@ -43,7 +43,9 @@ const NavBar = ({ books, authors, showBooksHandler, deleteBook}) => {
             />
           </Menu.Menu>
         </Menu>
-        <Route path="/books" render={() => <BookCard books={ books } deleteBook={ deleteBook }/>} />
+        <Route path="/books" render={() => (
+        <BookCard books={ books } deleteBook={ deleteBook }/>
+        )} />
         <Route
           path="/authors"
           render={() => <AuthorCard authors={ authors } />}

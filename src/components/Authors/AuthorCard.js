@@ -1,4 +1,5 @@
 import React from "react";
+import AuthorHeader from './AuthorHeader';
 import { Card, Icon, Image, Divider } from "semantic-ui-react";
 
 const style = {
@@ -8,10 +9,11 @@ const style = {
 };
 
 const AuthorCard = ({ authors }) => {
+  const authorList = (authors) => {
     return authors.map((author, id) => {
       return (
         <Card style={ style.cardWidth } key={ id }>
-          <Image floated="left" size="small" src={ author.portraitUrl } />
+          <Image floated="left" size="small" src={ author.portraitUrl } className="authorbook"/>
           <Card.Content>
             <Card.Header>{ author.firstName } { author.lastName }</Card.Header>
             <Divider />
@@ -23,18 +25,25 @@ const AuthorCard = ({ authors }) => {
             </Card.Content>
           </Card.Content>
           <Card.Content extra>
-            <a>
+            <a href="/">
               <Icon name="edit" float="right" />
               Edit
             </a>
-            <a>
+            <a href="/">
               <Icon name="delete" float="right" />
               Delete
             </a>
           </Card.Content>
         </Card>
-      );
-    });
+      )
+    })
+}
+return (
+  <React.Fragment>
+    <AuthorHeader/>
+    <section>{authorList(authors)}</section>
+  </React.Fragment>
+)
 };
 
 export default AuthorCard;

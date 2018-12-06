@@ -36,18 +36,15 @@ class App extends Component {
     });
   };
 
-  deleteBook = index => {
-    const currentList = this.state.books;
-    currentList.splice(index, 1);
-    this.setState({ currentList: currentList });
-    console.log("delete", this.state.books);
+  deleteBook = (e) => {
+    e.preventDefault()
   };
 
   render() {
     return (
       <Router>
         <React.Fragment>
-          <NavBarMain
+          <NavBar
             books={this.state.books}
             authors={this.state.authors}
             showBooksHandler={this.showBooksHandler}

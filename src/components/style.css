@@ -30,6 +30,12 @@ body {
   padding: .7rem !important;
 }
 
+.ui.card>.image.authorbook {
+  padding: .7rem !important;
+  margin-bottom: 4rem;
+  margin-top: 4rem;
+}
+
 .ui.card a {
   margin-left: 27%;
 }
@@ -43,6 +49,11 @@ body {
   width: 50% !important;
   margin: 0 auto !important;
   text-align: center;
+}
+
+.ui.basic.button {
+  margin-top: 2rem;
+  margin-left: 46%;
 }
 
 .header {
