@@ -1,6 +1,6 @@
 import React from "react";
 import BookHeader from "./BookHeader";
-import { Card, Icon, Image, Divider, Message } from "semantic-ui-react";
+import { Card, Icon, Image, Divider } from "semantic-ui-react";
 
 const style = {
   cardWidth: {
