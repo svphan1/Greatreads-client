@@ -3,6 +3,7 @@ import { Form } from "semantic-ui-react";
 
 class BookAddForm extends Component {
   state = {
+    bookList: [],
     title: "",
     genre: "",
     authors: "",
@@ -11,32 +12,27 @@ class BookAddForm extends Component {
   };
 
   titleListener = e => {
-    this.setState({ title: e.target.value })
-    console.log('title', this.state.title)
+    this.setState({ title: e.target.value });
   };
 
   genreListener = e => {
-    this.setState({ genre: e.target.value })
-    console.log('genre', this.state.genre)
+    this.setState({ genre: e.target.value });
   };
 
   authorsListener = e => {
-    this.setState({ authors: e.target.value })
-    console.log('author',this.state.authors)
+    this.setState({ authors: e.target.value });
   };
 
   descriptionListener = e => {
-    this.setState({ description: e.target.value })
-    console.log('description',this.state.description)
+    this.setState({ description: e.target.value });
   };
 
   coverUrlListener = e => {
-    this.setState({ coverUrl: e.target.value })
-    console.log('coverUrl',this.state.coverUrl)
+    this.setState({ coverUrl: e.target.value });
   };
 
   postBook = e => {
-    e.preventDefault()
+    e.preventDefault();
 
     fetch("http://localhost:3000/books", {
       method: "POST",
@@ -46,14 +42,16 @@ class BookAddForm extends Component {
       },
       body: JSON.stringify({
         title: this.state.title,
+        genre: this.state.genre,
         authors: this.state.authors,
         description: this.state.description,
         coverUrl: this.state.coverUrl
       })
-  })
-}
+    }).then(this.props.fetchBooks);
+  };
 
   render() {
+    const { fetchBooks } = this.props;
     return (
       <Form>
         <Form.Group widths="equal">
@@ -91,7 +89,7 @@ class BookAddForm extends Component {
           placeholder="Image Url"
           onChange={this.coverUrlListener}
         />
-        <Form.Button>Add Book</Form.Button>
+        <Form.Button onClick={this.postBook}>Add Book</Form.Button>
       </Form>
     );
   }

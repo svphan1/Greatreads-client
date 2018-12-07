@@ -3,10 +3,12 @@ import "../style.css";
 import logo from "../../images/greatreads.jpg";
 import { Input, Menu } from "semantic-ui-react";
 import BookCard from "../Books/BookCard";
+import BookList from "../Books/BookList";
+import BookCard2 from "../Books/BookCard2";
 import AuthorCard from "../Authors/AuthorCard";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-const NavBar = ({ books, authors, showBooksHandler, deleteBook}) => {
+const NavBar = ({ books, authors, fetchBooks, showBooksHandler}) => {
   return (
     <React.Fragment>
         <Menu secondary stackable>
@@ -44,7 +46,7 @@ const NavBar = ({ books, authors, showBooksHandler, deleteBook}) => {
           </Menu.Menu>
         </Menu>
         <Route path="/books" render={() => (
-        <BookCard books={ books } deleteBook={ deleteBook }/>
+        <BookCard books={ books } fetchBooks={fetchBooks}/>
         )} />
         <Route
           path="/authors"

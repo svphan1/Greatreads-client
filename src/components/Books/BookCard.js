@@ -8,7 +8,7 @@ const style = {
   }
 };
 
-const BookCard = ({ books, deleteBook }) => {
+const BookCard = ({ books, fetchBooks }) => {
   const bookList = books => {
     return books.map((book, id) => {
       return (
@@ -25,9 +25,7 @@ const BookCard = ({ books, deleteBook }) => {
             <Card.Content>
               <Card.Description>Authors: {book.title}</Card.Description> <br />
               <Card.Description>Genre: {book.genre}</Card.Description> <br />
-              <Card.Description>
-                Description: {book.description}.
-              </Card.Description>
+              <Card.Description>Description: {book.description}</Card.Description>
             </Card.Content>
           </Card.Content>
           <Card.Content extra>
@@ -36,7 +34,7 @@ const BookCard = ({ books, deleteBook }) => {
               Edit
             </a>
             <a href="/">
-              <Icon name="delete" float="right" onClick={deleteBook} />
+              <Icon name="delete" float="right"/>
               Delete Book
             </a>
           </Card.Content>
@@ -46,7 +44,7 @@ const BookCard = ({ books, deleteBook }) => {
   };
   return (
     <React.Fragment>
-      <BookHeader />
+      <BookHeader fetchBooks={fetchBooks}/>
       <section>{bookList(books)}</section>
     </React.Fragment>
   );
