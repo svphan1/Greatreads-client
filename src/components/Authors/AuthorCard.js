@@ -8,7 +8,7 @@ const style = {
   }
 };
 
-const AuthorCard = ({ authors }) => {
+const AuthorCard = ({ authors, fetchAuthors }) => {
   const authorList = authors => {
     return authors.map((author, id) => {
       return (
@@ -45,7 +45,7 @@ const AuthorCard = ({ authors }) => {
   };
   return (
     <React.Fragment>
-      <AuthorHeader />
+      <AuthorHeader fetchAuthors={fetchAuthors} />
       <section>{authorList(authors)}</section>
     </React.Fragment>
   );

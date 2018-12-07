@@ -47,7 +47,8 @@ class BookAddForm extends Component {
         description: this.state.description,
         coverUrl: this.state.coverUrl
       })
-    }).then(this.props.fetchBooks);
+    })
+    .then(this.props.fetchBooks);
   };
 
   render() {
@@ -63,7 +64,6 @@ class BookAddForm extends Component {
             onChange={this.titleListener}
           />
           <Form.Input
-            required
             fluid
             label="Genre"
             placeholder="Genre"
@@ -78,7 +78,6 @@ class BookAddForm extends Component {
           />
         </Form.Group>
         <Form.TextArea
-          required
           label="Description"
           placeholder="Book description..."
           onChange={this.descriptionListener}

@@ -10,6 +10,7 @@ const NavBar = ({
   books,
   authors,
   fetchBooks,
+  fetchAuthors,
   deleteBook,
   showBooksHandler
 }) => {
@@ -59,7 +60,12 @@ const NavBar = ({
           />
         )}
       />
-      <Route path="/authors" render={() => <AuthorCard authors={authors} />} />
+      <Route
+        path="/authors"
+        render={() => (
+          <AuthorCard authors={authors} fetchAuthors={fetchAuthors} />
+        )}
+      />
     </React.Fragment>
   );
 };

@@ -58,6 +58,7 @@ class App extends Component {
             books={this.state.books}
             authors={this.state.authors}
             fetchBooks={this.fetchBooks}
+            fetchAuthors={this.fetchAuthors}
             deleteBook={this.deleteBook}
             showBooksHandler={this.showBooksHandler}
           />
