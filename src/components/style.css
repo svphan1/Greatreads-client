@@ -53,8 +53,24 @@ body {
 
 .ui.basic.button {
   margin-top: 2rem;
-  margin-left: 46%;
+  margin-left: 47%;
   margin-bottom: 1rem;
+  box-shadow: 2px 2px 5px #ccc;
+  background: darkseagreen !important;
+}
+
+.ui.basic.button:focus {
+  background: darkseagreen !important;
+}
+
+.ui.basic.button:hover {
+  background: rgb(195, 236, 195) !important;
+}
+
+.ui.basic.button:active {
+  background: darkseagreen !important;
+  box-shadow: 2px 2px 5px #ccc;
+  transform: translateY(1px);
 }
 
 .ui.form {
