@@ -50,6 +50,18 @@ class App extends Component {
     }).then(this.fetchBooks);
   };
 
+  deleteAuthor = e => {
+    e.preventDefault();
+    const id = e.target.id;
+    fetch(`http://localhost:3000/authors/${id}`, {
+      method: "DELETE",
+      mode: "cors",
+      headers: {
+        "Content-Type": "application/JSON"
+      }
+    }).then(this.fetchAuthors);
+  };
+
   render() {
     return (
       <Router>
@@ -60,6 +72,7 @@ class App extends Component {
             fetchBooks={this.fetchBooks}
             fetchAuthors={this.fetchAuthors}
             deleteBook={this.deleteBook}
+            deleteAuthor={this.deleteAuthor}
             showBooksHandler={this.showBooksHandler}
           />
           <Route exact path="/" component={Home} />

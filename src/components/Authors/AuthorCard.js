@@ -1,6 +1,7 @@
 import React from "react";
 import AuthorHeader from "./AuthorHeader";
 import { Card, Icon, Image, Divider } from "semantic-ui-react";
+import BookAddForm from "../Books/BookAddForm";
 
 const style = {
   cardWidth: {
@@ -8,11 +9,11 @@ const style = {
   }
 };
 
-const AuthorCard = ({ authors, fetchAuthors }) => {
+const AuthorCard = ({ authors, fetchAuthors, deleteAuthor }) => {
   const authorList = authors => {
-    return authors.map((author, id) => {
+    return authors.map(author => {
       return (
-        <Card style={style.cardWidth} key={id}>
+        <Card style={style.cardWidth} key={author.id}>
           <Image
             floated="left"
             size="small"
@@ -25,7 +26,8 @@ const AuthorCard = ({ authors, fetchAuthors }) => {
             </Card.Header>
             <Divider />
             <Card.Content>
-              <Card.Description>{author.biography}</Card.Description> <br />
+              <Card.Description>Biography: {author.biography}</Card.Description>{" "}
+              <br />
               <Card.Description>Books: {author.firstName}</Card.Description>
             </Card.Content>
           </Card.Content>
@@ -34,7 +36,7 @@ const AuthorCard = ({ authors, fetchAuthors }) => {
               <Icon name="edit" float="right" />
               Edit
             </a>
-            <a href="/">
+            <a href="/" onClick={deleteAuthor} id={author.id}>
               <Icon name="delete" float="right" />
               Delete
             </a>
