@@ -8,11 +8,11 @@ const style = {
   }
 };
 
-const BookCard = ({ books, fetchBooks }) => {
+const BookCard = ({ books, fetchBooks, deleteBook }) => {
   const bookList = books => {
-    return books.map((book, id) => {
+    return books.map((book) => {
       return (
-        <Card style={style.cardWidth} key={id}>
+        <Card style={style.cardWidth} key={book.id}>
           <Image
             floated="left"
             size="small"
@@ -33,7 +33,7 @@ const BookCard = ({ books, fetchBooks }) => {
               <Icon name="edit" float="right" />
               Edit
             </a>
-            <a href="/">
+            <a href="/" onClick={deleteBook} id={book.id}>
               <Icon name="delete" float="right"/>
               Delete Book
             </a>

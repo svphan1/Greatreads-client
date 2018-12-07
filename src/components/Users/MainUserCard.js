@@ -8,7 +8,7 @@ const MainUserCard = ({ showBooksHandler, books }) => (
   <Card onClick={ showBooksHandler } as={ Link } to="/books" className="user1">
     <Image src={ image } />
     <Card.Content>
-      <Card.Header>Son</Card.Header>
+      <Card.Header>Sons</Card.Header>
     </Card.Content>
   </Card>
 );

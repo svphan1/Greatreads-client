@@ -4,6 +4,7 @@ import NavBarMain from "../components/NavBars/NavBarMain";
 import BookAddForm from "../components/Books/BookAddForm";
 import BookList from "../components/Books/BookList";
 import MainUserCard from "../components/Users/MainUserCard";
+import Home from "../components/Users/Home";
 import GuestUserCard from "../components/Users/GuestUserCard";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { Message } from "semantic-ui-react";
@@ -16,40 +17,26 @@ class App extends Component {
     showUserCards: true
   };
 
-  // componentDidMount() {
-  //   Promise.all([
-  //     fetch("http://localhost:3000/books"),
-  //     fetch("http://localhost:3000/authors")
-  //   ])
-  //     .then(([res1, res2]) => Promise.all([res1.json(), res2.json()]))
-  //     .then(([data1, data2]) =>
-  //       this.setState({
-  //         books: data1.books,
-  //         authors: data2.authors
-  //       })
-  //     );
-  // }
-
   fetchBooks = () => {
     fetch("http://localhost:3000/books")
       .then(response => response.json())
       .then(data => {
-        this.setState({ books: data.books })
-      })
+        this.setState({ books: data.books });
+      });
   };
 
   fetchAuthors = () => {
     fetch("http://localhost:3000/authors")
       .then(response => response.json())
       .then(data => {
-        this.setState({ authors: data.authors })
-      })
+        this.setState({ authors: data.authors });
+      });
   };
 
   componentDidMount() {
-    this.fetchBooks()
-    this.fetchAuthors()
-  };
+    this.fetchBooks();
+    this.fetchAuthors();
+  }
 
   showBooksHandler = () => {
     this.setState({
@@ -58,23 +45,18 @@ class App extends Component {
   };
 
   deleteBook = e => {
-      e.preventDefault();
-  
-      fetch("http://localhost:3000/books", {
-        method: "DELETE",
-        mode: "cors",
-        headers: {
-          "Content-Type": "application/JSON"
-        },
-        body: JSON.stringify({
-          title: this.state.title,
-          genre: this.state.genre,
-          authors: this.state.authors,
-          description: this.state.description,
-          coverUrl: this.state.coverUrl
-        })
-      }).then(this.props.fetchBooks);
-    };
+    e.preventDefault();
+    const id = e.target.id
+    console.log(e.target.id)
+    fetch(`http://localhost:3000/books/${id}`, {
+      method: "DELETE",
+      mode: "cors",
+      headers: {
+        "Content-Type": "application/JSON"
+      }
+    })
+    .then(this.fetchBooks);
+  };
 
   render() {
     return (
@@ -84,9 +66,11 @@ class App extends Component {
             books={this.state.books}
             authors={this.state.authors}
             fetchBooks={this.fetchBooks}
+            deleteBook={this.deleteBook}
             showBooksHandler={this.showBooksHandler}
           />
-          {this.state.showUserCards ? (
+          <Route exact path="/" component={Home}/>
+          {/* {this.state.showUserCards ? (
             <div>
               <Message warning>
                 <Message.Header>Welcome to Greatreads!</Message.Header>
@@ -101,7 +85,7 @@ class App extends Component {
                 books={this.state.books}
               />
             </div>
-          ) : null}
+          ) : null} */}
         </React.Fragment>
       </Router>
     );

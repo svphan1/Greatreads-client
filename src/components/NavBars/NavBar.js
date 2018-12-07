@@ -8,50 +8,48 @@ import BookCard2 from "../Books/BookCard2";
 import AuthorCard from "../Authors/AuthorCard";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-const NavBar = ({ books, authors, fetchBooks, showBooksHandler}) => {
+const NavBar = ({ books, authors, fetchBooks, deleteBook, showBooksHandler }) => {
   return (
     <React.Fragment>
-        <Menu secondary stackable>
+      <Menu secondary stackable>
+        <Menu.Item>
+          <img src={logo} />
+        </Menu.Item>
+        <Menu.Item
+          as={Link}
+          name="home"
+          to="/"
+          onClick={window.location.reload}
+        />
+        <Menu.Item
+          as={Link}
+          name="Books"
+          to="/books"
+          onClick={showBooksHandler}
+        />
+        <Menu.Item
+          as={Link}
+          name="Authors"
+          to="/authors"
+          onClick={showBooksHandler}
+        />
+        <Menu.Menu position="right">
           <Menu.Item>
-            <img src={ logo } />
+            <Input icon="search" placeholder="Search..." />
           </Menu.Item>
           <Menu.Item
-            as={ Link }
-            name="home"
+            as={Link}
+            name="logout"
             to="/"
-            onClick={ window.location.reload }
+            onClick={window.location.reload}
           />
-          <Menu.Item
-            as={Link}
-            name="Books"
-            to="/books"
-            onClick={ showBooksHandler }
-          />
-          <Menu.Item
-            as={Link}
-            name="Authors"
-            to="/authors"
-            onClick={ showBooksHandler }
-          />
-          <Menu.Menu position="right">
-            <Menu.Item>
-              <Input icon="search" placeholder="Search..." />
-            </Menu.Item>
-            <Menu.Item
-              as={Link}
-              name="logout"
-              to="/"
-              onClick={ window.location.reload }
-            />
-          </Menu.Menu>
-        </Menu>
-        <Route path="/books" render={() => (
-        <BookCard books={ books } fetchBooks={fetchBooks}/>
-        )} />
-        <Route
-          path="/authors"
-          render={() => <AuthorCard authors={ authors } />}
-        />
+        </Menu.Menu>
+      </Menu>
+      <Route
+        path="/books"
+        render={() => <BookCard books={books} fetchBooks={fetchBooks} deleteBook={deleteBook}/>}
+      />
+      <Route path="/authors" render={() => <AuthorCard authors={authors} />} />
     </React.Fragment>
   );
 };
