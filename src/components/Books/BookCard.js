@@ -24,6 +24,7 @@ const BookCard = ({ books, deleteBook }) => {
             <Divider />
             <Card.Content>
               <Card.Description>Authors: {book.title}</Card.Description> <br />
+              <Card.Description>Genre: {book.genre}</Card.Description> <br />
               <Card.Description>
                 Description: {book.description}.
               </Card.Description>
