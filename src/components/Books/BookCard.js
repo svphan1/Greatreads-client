@@ -24,10 +24,10 @@ const BookCard = ({ books, fetchBooks, deleteBook, editBook, filterBooks }) => {
             <Card.Header>{book.title}</Card.Header>
             <Divider />
             <Card.Content>
-              <Card.Description>Authors: {book.title}</Card.Description> <br />
+              <Card.Description>Author(s): {book.authors}</Card.Description> <br />
               <Card.Description>Genre: {book.genre}</Card.Description> <br />
               <Card.Description>
-                Description: {book.description}
+                Description: <br/>{book.description}
               </Card.Description>
             </Card.Content>
           </Card.Content>

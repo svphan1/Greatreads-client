@@ -30,6 +30,11 @@ body {
   padding: .7rem !important;
 }
 
+.ui.card>.content>.header {
+  margin-right: 9vw !important;
+  font-size: 1.8rem !important;
+}
+
 a.edit {
   display: inline-block;
   color: rgb(81, 81, 241) !important;

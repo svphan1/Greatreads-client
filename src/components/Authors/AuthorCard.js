@@ -26,9 +26,7 @@ const AuthorCard = ({ authors, fetchAuthors, deleteAuthor, filterAuthors }) => {
             </Card.Header>
             <Divider />
             <Card.Content>
-              <Card.Description>Biography: {author.biography}</Card.Description>{" "}
-              <br />
-              <Card.Description>Books: {author.firstName}</Card.Description>
+              <Card.Description>Biography: <br/>{author.biography}</Card.Description>
             </Card.Content>
           </Card.Content>
           <Card.Content extra>
