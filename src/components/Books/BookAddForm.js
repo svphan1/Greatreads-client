@@ -33,7 +33,7 @@ class BookAddForm extends Component {
 
   postBook = e => {
     e.preventDefault();
-    
+
     fetch("http://localhost:3000/books", {
       method: "POST",
       mode: "cors",
@@ -48,9 +48,9 @@ class BookAddForm extends Component {
         coverUrl: this.state.coverUrl
       })
     })
-    .then(res => res.json())
-    .then(this.props.fetchBooks)
-    .then(this.props.toggleHidden);
+      .then(res => res.json())
+      .then(this.props.fetchBooks)
+      .then(this.props.toggleHidden);
   };
 
   render() {

@@ -21,7 +21,12 @@ class AuthorHeader extends Component {
           <Message.Header>Favorite Authors</Message.Header>
         </Message>
         <Button content="Add Author" basic onClick={this.toggleHidden} />
-        {!this.state.isHidden && <AuthorAddForm fetchAuthors={fetchAuthors} />}
+        {!this.state.isHidden && (
+          <AuthorAddForm
+            fetchAuthors={fetchAuthors}
+            toggleHidden={this.toggleHidden}
+          />
+        )}
       </React.Fragment>
     );
   }

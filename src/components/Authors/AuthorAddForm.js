@@ -41,13 +41,15 @@ class AuthorAddForm extends Component {
         biography: this.state.biography,
         portraitUrl: this.state.portraitUrl
       })
-    }).then(this.props.fetchAuthors);
+    })
+      .then(this.props.fetchAuthors)
+      .then(this.props.toggleHidden);
   };
 
   render() {
     const { fetchAuthors } = this.props;
     return (
-      <Form>
+      <Form onSubmit={this.postAuthor}>
         <Form.Group widths="equal">
           <Form.Input
             required
@@ -75,7 +77,7 @@ class AuthorAddForm extends Component {
           placeholder="Image Url"
           onChange={this.portraitUrlListener}
         />
-        <Form.Button warning required onClick={this.postAuthor}>Submit</Form.Button>
+        <Form.Button>Submit</Form.Button>
       </Form>
     );
   }
