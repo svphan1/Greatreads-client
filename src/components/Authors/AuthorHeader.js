@@ -14,13 +14,14 @@ class AuthorHeader extends Component {
   };
 
   render() {
-    const { fetchAuthors } = this.props;
+    const { fetchAuthors, filterAuthors } = this.props;
     return (
       <React.Fragment>
         <Message warning>
           <Message.Header>Favorite Authors</Message.Header>
         </Message>
-        <Button content="Add Author" basic onClick={this.toggleHidden} />
+        <Button content="Filter Authors" basic onClick={filterAuthors} />
+        <Button content="Add Author" className="addBtn" basic onClick={this.toggleHidden} />
         {!this.state.isHidden && (
           <AuthorAddForm
             fetchAuthors={fetchAuthors}

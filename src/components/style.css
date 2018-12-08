@@ -83,6 +83,12 @@ a.delete:hover {
   background: darkseagreen !important;
 }
 
+.ui.basic.button.addBtn {
+  margin-top: 0;
+  padding-left: 2.1rem;
+  padding-right: 1.9rem;
+}
+
 .ui.basic.button:focus {
   background: darkseagreen !important;
 }

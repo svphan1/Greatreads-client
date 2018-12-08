@@ -14,13 +14,14 @@ class BookHeader extends Component {
   };
 
   render() {
-    const { fetchBooks } = this.props;
+    const { fetchBooks, filterBooks } = this.props;
     return (
       <React.Fragment>
         <Message warning>
           <Message.Header>My Bookshelf</Message.Header>
         </Message>
-        <Button content="Add Book" basic onClick={this.toggleHidden} />
+        <Button content="Filter Books" basic onClick={filterBooks} />
+        <Button content="Add Book" className="addBtn" basic onClick={this.toggleHidden} />
         {!this.state.isHidden && (
           <BookAddForm
             fetchBooks={fetchBooks}

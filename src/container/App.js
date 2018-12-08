@@ -32,12 +32,6 @@ class App extends Component {
     this.fetchAuthors();
   }
 
-  showBooksHandler = () => {
-    this.setState({
-      showUserCards: false
-    });
-  };
-
   deleteBook = e => {
     e.preventDefault();
     const id = e.target.id;
@@ -62,6 +56,28 @@ class App extends Component {
     }).then(this.fetchAuthors);
   };
 
+  filterBooks = () => {
+    this.setState({
+      books: this.state.books.sort((a, b) => {
+        let nameA = a.title.toLowerCase(),
+            nameB = b.title.toLowerCase();
+              if (nameA < nameB) return -1;
+              if (nameA > nameB) return 1;
+      })
+    })
+  };
+
+  filterAuthors = () => {
+    this.setState({
+      authors: this.state.authors.sort((a, b) => {
+        let nameA = a.firstName.toLowerCase(),
+            nameB = b.firstName.toLowerCase();
+              if (nameA < nameB) return -1;
+              if (nameA > nameB) return 1;
+      })
+    })
+  };
+
   render() {
     return (
       <Router>
@@ -73,7 +89,8 @@ class App extends Component {
             fetchAuthors={this.fetchAuthors}
             deleteBook={this.deleteBook}
             deleteAuthor={this.deleteAuthor}
-            showBooksHandler={this.showBooksHandler}
+            filterBooks={this.filterBooks}
+            filterAuthors={this.filterAuthors}
           />
           <Route exact path="/" component={Home} />
         </React.Fragment>

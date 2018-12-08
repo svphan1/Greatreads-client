@@ -2,6 +2,7 @@ import React from "react";
 import "../style.css";
 import logo from "../../images/greatreads.jpg";
 import { Input, Menu } from "semantic-ui-react";
+import Home from "../Users/Home";
 import BookCard from "../Books/BookCard";
 import AuthorCard from "../Authors/AuthorCard";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
@@ -13,7 +14,8 @@ const NavBar = ({
   fetchAuthors,
   deleteBook,
   deleteAuthor,
-  showBooksHandler
+  filterBooks,
+  filterAuthors
 }) => {
   return (
     <React.Fragment>
@@ -25,19 +27,16 @@ const NavBar = ({
           as={Link}
           name="home"
           to="/"
-          onClick={window.location.reload}
         />
         <Menu.Item
           as={Link}
           name="Books"
           to="/books"
-          onClick={showBooksHandler}
         />
         <Menu.Item
           as={Link}
           name="Authors"
           to="/authors"
-          onClick={showBooksHandler}
         />
         <Menu.Menu position="right">
           <Menu.Item>
@@ -58,6 +57,7 @@ const NavBar = ({
             books={books}
             fetchBooks={fetchBooks}
             deleteBook={deleteBook}
+            filterBooks={filterBooks}
           />
         )}
       />
@@ -68,6 +68,7 @@ const NavBar = ({
             authors={authors}
             fetchAuthors={fetchAuthors}
             deleteAuthor={deleteAuthor}
+            filterAuthors={filterAuthors}
           />
         )}
       />

@@ -9,7 +9,7 @@ const style = {
   }
 };
 
-const AuthorCard = ({ authors, fetchAuthors, deleteAuthor }) => {
+const AuthorCard = ({ authors, fetchAuthors, deleteAuthor, filterAuthors }) => {
   const authorList = authors => {
     return authors.map(author => {
       return (
@@ -36,7 +36,12 @@ const AuthorCard = ({ authors, fetchAuthors, deleteAuthor }) => {
               <Icon name="edit" float="right" />
               Edit
             </a>
-            <a href="/" className="delete" onClick={deleteAuthor} id={author.id}>
+            <a
+              href="/"
+              className="delete"
+              onClick={deleteAuthor}
+              id={author.id}
+            >
               <Icon name="delete" float="right" />
               Delete
             </a>
@@ -47,7 +52,7 @@ const AuthorCard = ({ authors, fetchAuthors, deleteAuthor }) => {
   };
   return (
     <React.Fragment>
-      <AuthorHeader fetchAuthors={fetchAuthors} />
+      <AuthorHeader fetchAuthors={fetchAuthors} filterAuthors={filterAuthors} />
       <section>{authorList(authors)}</section>
     </React.Fragment>
   );
