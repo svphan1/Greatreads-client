@@ -1,7 +1,8 @@
 import React from "react";
 import "../style.css";
-import logo from "../../images/greatreads.jpg";
-import { Input, Menu } from "semantic-ui-react";
+import logo from "../../assets/greatreads.jpg";
+import user from "../../assets/user.png";
+import { Input, Menu, Image } from "semantic-ui-react";
 import Home from "../Users/Home";
 import BookCard from "../Books/BookCard";
 import AuthorCard from "../Authors/AuthorCard";
@@ -42,6 +43,7 @@ const NavBar = ({
           <Menu.Item>
             <Input icon="search" placeholder="Search..." />
           </Menu.Item>
+          <Image avatar src={user} size='small' />
           <Menu.Item
             as={Link}
             name="logout"

@@ -4,16 +4,15 @@ import NavBar from "../NavBars/NavBar";
 import MainUserCard from "./MainUserCard";
 import GuestUserCard from "./GuestUserCard";
 
-const Home = () => {
+const Home = ({ changeNavBar }) => {
   return (
     <React.Fragment>
-      {/* <NavBar /> */}
       <Message warning>
         <Message.Header>Welcome to Greatreads!</Message.Header>
         <p>Please choose your login</p>
       </Message>
-      <MainUserCard />
-      <GuestUserCard />
+      <MainUserCard changeNavBar={changeNavBar}/>
+      <GuestUserCard changeNavBar={changeNavBar}/>
       <Message className="signup">
         New to us? <a href="#">Sign Up</a>
       </Message>

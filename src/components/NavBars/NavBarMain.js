@@ -1,8 +1,7 @@
 import React from "react";
 import "../style.css";
-import logo from "../../images/greatreads.jpg";
+import logo from "../../assets/greatreads.jpg";
 import { Input, Menu } from "semantic-ui-react";
-import NavBar from "./NavBar";
 import BookCard from "../Books/BookCard";
 import AuthorCard from "../Authors/AuthorCard";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";

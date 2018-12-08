@@ -8,7 +8,8 @@ import "./App.css";
 class App extends Component {
   state = {
     books: [],
-    authors: []
+    authors: [],
+    isLoggedIn: false
   };
 
   fetchBooks = () => {
@@ -60,39 +61,62 @@ class App extends Component {
     this.setState({
       books: this.state.books.sort((a, b) => {
         let nameA = a.title.toLowerCase(),
-            nameB = b.title.toLowerCase();
-              if (nameA < nameB) return -1;
-              if (nameA > nameB) return 1;
+          nameB = b.title.toLowerCase();
+        if (nameA < nameB) return -1;
+        if (nameA > nameB) return 1;
       })
-    })
+    });
   };
 
   filterAuthors = () => {
     this.setState({
       authors: this.state.authors.sort((a, b) => {
         let nameA = a.firstName.toLowerCase(),
-            nameB = b.firstName.toLowerCase();
-              if (nameA < nameB) return -1;
-              if (nameA > nameB) return 1;
+          nameB = b.firstName.toLowerCase();
+        if (nameA < nameB) return -1;
+        if (nameA > nameB) return 1;
       })
-    })
+    });
+  };
+
+  changeNavBar = () => {
+    this.setState({ isLoggedIn: true })
   };
 
   render() {
     return (
       <Router>
         <React.Fragment>
-          <NavBar
-            books={this.state.books}
-            authors={this.state.authors}
-            fetchBooks={this.fetchBooks}
-            fetchAuthors={this.fetchAuthors}
-            deleteBook={this.deleteBook}
-            deleteAuthor={this.deleteAuthor}
-            filterBooks={this.filterBooks}
-            filterAuthors={this.filterAuthors}
+          {this.state.isLoggedIn ? (
+            <NavBar
+              books={this.state.books}
+              authors={this.state.authors}
+              fetchBooks={this.fetchBooks}
+              fetchAuthors={this.fetchAuthors}
+              deleteBook={this.deleteBook}
+              deleteAuthor={this.deleteAuthor}
+              filterBooks={this.filterBooks}
+              filterAuthors={this.filterAuthors}
+            />
+          ) : (
+            <NavBarMain
+              books={this.state.books}
+              authors={this.state.authors}
+              fetchBooks={this.fetchBooks}
+              fetchAuthors={this.fetchAuthors}
+              deleteBook={this.deleteBook}
+              deleteAuthor={this.deleteAuthor}
+              filterBooks={this.filterBooks}
+              filterAuthors={this.filterAuthors}
+            />
+          )}
+          <Route
+            exact
+            path="/"
+            render={() => (
+              <Home changeNavBar={this.changeNavBar} />
+            )}
           />
-          <Route exact path="/" component={Home} />
         </React.Fragment>
       </Router>
     );
