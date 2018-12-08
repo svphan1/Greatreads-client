@@ -1,5 +1,5 @@
 # Greatreads is a personal bookshelf for book lovers. 
-Users are able to:
+Users are able to: <br />
 -Choose a login <br />
 -View personal bookshelf and favorite authors <br />
 -Add/edit/delete books and authors <br />
