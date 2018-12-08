@@ -1,4 +1,6 @@
-# Greatreads is an application that allows users to:
+# Greatreads is a personal bookshelf for book lovers. 
+Users are able to:
+-Choose a login <br />
 -View personal bookshelf and favorite authors <br />
 -Add/edit/delete books and authors <br />
 -Filter books and authors by name <br />
