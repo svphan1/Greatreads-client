@@ -1,7 +1,6 @@
 import React from 'react';
 import "../style.css";
 import image from '../../assets/guest.png';
-import NavBar from "../NavBars/NavBar";
 import { Card, Image } from 'semantic-ui-react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 

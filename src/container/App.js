@@ -80,7 +80,7 @@ class App extends Component {
   };
 
   changeNavBar = () => {
-    this.setState({ isLoggedIn: true })
+    this.setState({ isLoggedIn: true });
   };
 
   render() {
@@ -113,9 +113,7 @@ class App extends Component {
           <Route
             exact
             path="/"
-            render={() => (
-              <Home changeNavBar={this.changeNavBar} />
-            )}
+            render={() => <Home changeNavBar={this.changeNavBar} />}
           />
         </React.Fragment>
       </Router>

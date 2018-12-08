@@ -3,7 +3,6 @@ import "../style.css";
 import logo from "../../assets/greatreads.jpg";
 import user from "../../assets/user.png";
 import { Input, Menu, Image } from "semantic-ui-react";
-import Home from "../Users/Home";
 import BookCard from "../Books/BookCard";
 import AuthorCard from "../Authors/AuthorCard";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
@@ -16,7 +15,7 @@ const NavBar = ({
   deleteBook,
   deleteAuthor,
   filterBooks,
-  filterAuthors
+  filterAuthors,
 }) => {
   return (
     <React.Fragment>
