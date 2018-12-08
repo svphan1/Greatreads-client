@@ -1,6 +1,7 @@
 import React from "react";
 import BookHeader from "./BookHeader";
 import { Card, Icon, Image, Divider } from "semantic-ui-react";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 const style = {
   cardWidth: {
@@ -8,7 +9,7 @@ const style = {
   }
 };
 
-const BookCard = ({ books, fetchBooks, deleteBook, filterBooks }) => {
+const BookCard = ({ books, fetchBooks, deleteBook, editBook, filterBooks }) => {
   const bookList = books => {
     return books.map(book => {
       return (
@@ -31,7 +32,7 @@ const BookCard = ({ books, fetchBooks, deleteBook, filterBooks }) => {
             </Card.Content>
           </Card.Content>
           <Card.Content extra>
-            <a href="/" className="edit">
+            <a href="/" className="edit" onClick={editBook} id={book.id}>
               <Icon name="edit" float="right" />
               Edit
             </a>
