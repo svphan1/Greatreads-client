@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Form } from "semantic-ui-react";
+import { Form, Message } from "semantic-ui-react";
 import "../style.css";
 
 class AuthorAddForm extends Component {
@@ -75,7 +75,7 @@ class AuthorAddForm extends Component {
           placeholder="Image Url"
           onChange={this.portraitUrlListener}
         />
-        <Form.Button onClick={this.postAuthor}>Add Author</Form.Button>
+        <Form.Button warning required onClick={this.postAuthor}>Submit</Form.Button>
       </Form>
     );
   }

@@ -12,6 +12,9 @@ const Home = () => {
       </Message>
       <MainUserCard />
       <GuestUserCard />
+      <Message className="signup">
+        New to us? <a href="#">Sign Up</a>
+      </Message>
     </React.Fragment>
   );
 };

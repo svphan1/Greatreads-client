@@ -29,11 +29,11 @@ const BookCard = ({ books, fetchBooks, deleteBook }) => {
             </Card.Content>
           </Card.Content>
           <Card.Content extra>
-            <a href="/">
+            <a href="/" className="edit">
               <Icon name="edit" float="right" />
               Edit
             </a>
-            <a href="/" onClick={deleteBook} id={book.id}>
+            <a href="/" className="delete" onClick={deleteBook} id={book.id}>
               <Icon name="delete" float="right"/>
               Delete Book
             </a>

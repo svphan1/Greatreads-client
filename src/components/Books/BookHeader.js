@@ -21,7 +21,7 @@ class BookHeader extends Component {
           <Message.Header>My Bookshelf</Message.Header>
         </Message>
         <Button content="Add Book" basic onClick={this.toggleHidden} />
-        {!this.state.isHidden && <BookAddForm fetchBooks={fetchBooks} />}
+        {!this.state.isHidden && <BookAddForm fetchBooks={fetchBooks} toggleHidden={this.toggleHidden}/>}
       </React.Fragment>
     );
   }

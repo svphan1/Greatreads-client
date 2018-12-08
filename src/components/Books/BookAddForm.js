@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Form } from "semantic-ui-react";
+import { Form, Message } from "semantic-ui-react";
 
 class BookAddForm extends Component {
   state = {
@@ -48,13 +48,15 @@ class BookAddForm extends Component {
         coverUrl: this.state.coverUrl
       })
     })
-    .then(this.props.fetchBooks);
+    .then(res => res.json())
+    .then(this.props.fetchBooks)
+    .then(this.props.toggleHidden);
   };
 
   render() {
     const { fetchBooks } = this.props;
     return (
-      <Form>
+      <Form onSubmit={this.postBook}>
         <Form.Group widths="equal">
           <Form.Input
             required
@@ -88,7 +90,7 @@ class BookAddForm extends Component {
           placeholder="Image Url"
           onChange={this.coverUrlListener}
         />
-        <Form.Button onClick={this.postBook}>Add Book</Form.Button>
+        <Form.Button warning>Submit</Form.Button>
       </Form>
     );
   }

@@ -32,11 +32,11 @@ const AuthorCard = ({ authors, fetchAuthors, deleteAuthor }) => {
             </Card.Content>
           </Card.Content>
           <Card.Content extra>
-            <a href="/">
+            <a href="/" className="edit">
               <Icon name="edit" float="right" />
               Edit
             </a>
-            <a href="/" onClick={deleteAuthor} id={author.id}>
+            <a href="/" className="delete" onClick={deleteAuthor} id={author.id}>
               <Icon name="delete" float="right" />
               Delete
             </a>

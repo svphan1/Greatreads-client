@@ -30,6 +30,24 @@ body {
   padding: .7rem !important;
 }
 
+a.edit {
+  display: inline-block;
+  color: rgb(81, 81, 241) !important;
+}
+
+a.edit:hover {
+  transform: scale(1.1);
+}
+
+a.delete {
+  display: inline-block;
+  color: rgb(242, 63, 63) !important;
+}
+
+a.delete:hover {
+  transform: scale(1.1);
+}
+
 .ui.card>.image.authorbook {
   padding: .7rem !important;
   margin-bottom: 4rem;
@@ -46,9 +64,15 @@ body {
 
 .ui.message,
 .p {
-  width: 50% !important;
+  width: 40% !important;
   margin: 0 auto !important;
   text-align: center;
+}
+
+.ui.message.signup {
+  width: 30% !important;
+  margin-top: 2rem !important;
+  background-color: white !important;
 }
 
 .ui.basic.button {
@@ -71,6 +95,15 @@ body {
   background: darkseagreen !important;
   box-shadow: 2px 2px 5px #ccc;
   transform: translateY(1px);
+}
+
+.ui.button {
+  background: darkseagreen;
+  margin-left: 45%;
+}
+
+.ui.button:hover {
+  background: rgb(195, 236, 195);
 }
 
 .ui.form {
