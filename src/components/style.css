@@ -11,7 +11,7 @@ body {
   width: 8.5rem !important;
 }
 
-.ui.small.image {
+.ui.small.image.avatar {
   width: 3.4rem;
   height: 3.3rem;
   margin-top: .7rem;
@@ -22,7 +22,8 @@ body {
   display: inline-block !important;
   margin: 2% -12% !important;
   margin-left: 25% !important;
-  box-shadow: 6px 3px 20px #ccc;
+  box-shadow: 3px 5px 2rem #ccc;
+  border: 1px #c9ba9b solid;
 }
 
 .ui.card.user1 {

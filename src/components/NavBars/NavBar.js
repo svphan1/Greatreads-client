@@ -43,7 +43,7 @@ const NavBar = ({
           <Menu.Item>
             <Input icon="search" placeholder="Search..." />
           </Menu.Item>
-          <Image avatar src={user} size='small' />
+          <Image avatar src={user} size='small' className="avatar"/>
           <Menu.Item
             as={Link}
             name="logout"
