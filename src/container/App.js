@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import NavBar from "../components/NavBars/NavBar";
 import NavBarMain from "../components/NavBars/NavBarMain";
 import Home from "../components/Users/Home";
+import BookEditModal from "../components/Books/BookEditModal/BookEditModal";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "./App.css";
 
@@ -9,7 +10,8 @@ class App extends Component {
   state = {
     books: [],
     authors: [],
-    isLoggedIn: false
+    isLoggedIn: false,
+    show: false
   };
 
   fetchBooks = () => {
@@ -83,6 +85,16 @@ class App extends Component {
     this.setState({ isLoggedIn: true });
   };
 
+  showModal = (e) => {
+    e.preventDefault();
+    this.setState({ show: true });
+    console.log('modal')
+  };
+
+  hideModal = () => {
+    this.setState({ show: false });
+  };
+
   render() {
     return (
       <Router>
@@ -97,6 +109,7 @@ class App extends Component {
               deleteAuthor={this.deleteAuthor}
               filterBooks={this.filterBooks}
               filterAuthors={this.filterAuthors}
+              showModal={this.showModal}
             />
           ) : (
             <NavBarMain
@@ -110,6 +123,7 @@ class App extends Component {
               filterAuthors={this.filterAuthors}
             />
           )}
+          <BookEditModal show={this.state.show} hideModal={this.hideModal} showModal={this.showModal}/>
           <Route
             exact
             path="/"

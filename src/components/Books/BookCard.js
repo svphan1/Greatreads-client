@@ -1,5 +1,7 @@
 import React from "react";
 import BookHeader from "./BookHeader";
+import BookEditModal from "./BookEditModal/BookEditModal";
+import BookEditForm from "./BookEditModal/BookEditModal";
 import { Card, Icon, Image, Divider } from "semantic-ui-react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
@@ -9,7 +11,7 @@ const style = {
   }
 };
 
-const BookCard = ({ books, fetchBooks, deleteBook, editBook, filterBooks }) => {
+const BookCard = ({ books, fetchBooks, deleteBook, showModal, show, hideModal, filterBooks }) => {
   const bookList = books => {
     return books.map(book => {
       return (
@@ -21,7 +23,7 @@ const BookCard = ({ books, fetchBooks, deleteBook, editBook, filterBooks }) => {
             className="authorbook"
           />
           <Card.Content>
-            <Card.Header>{book.title}</Card.Header>
+            <Card.Header className="card-header">{book.title}</Card.Header>
             <Divider />
             <Card.Content>
               <Card.Description>Author(s): {book.authors}</Card.Description> <br />
@@ -32,7 +34,10 @@ const BookCard = ({ books, fetchBooks, deleteBook, editBook, filterBooks }) => {
             </Card.Content>
           </Card.Content>
           <Card.Content extra>
-            <a href="/" className="edit" onClick={editBook} id={book.id}>
+          <BookEditModal show={show} handleClose={hideModal}>
+          <BookEditForm/>
+          </BookEditModal>
+            <a href="/" className="edit" onClick={showModal} id={book.id}>
               <Icon name="edit" float="right" />
               Edit
             </a>

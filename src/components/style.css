@@ -38,9 +38,9 @@ body {
   padding: .7rem !important;
 }
 
-.ui.card>.content>.header {
+.ui.card>.content>.header.card-header {
   margin-right: 9vw !important;
-  font-size: 1.8rem !important;
+  font-size: 1.3rem !important;
 }
 
 a.edit {

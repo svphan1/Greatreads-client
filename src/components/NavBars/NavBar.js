@@ -16,6 +16,7 @@ const NavBar = ({
   deleteAuthor,
   filterBooks,
   filterAuthors,
+  showModal
 }) => {
   return (
     <React.Fragment>
@@ -59,6 +60,7 @@ const NavBar = ({
             fetchBooks={fetchBooks}
             deleteBook={deleteBook}
             filterBooks={filterBooks}
+            showModal={showModal}
           />
         )}
       />
