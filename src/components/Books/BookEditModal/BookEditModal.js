@@ -1,6 +1,6 @@
 import React from "react";
 import "./Modal.css";
-import { Card, Icon, Image, Divider } from "semantic-ui-react";
+import { Card, Image, Divider, Form, TextArea } from "semantic-ui-react";
 
 const BookEditModal = ({ hideModal, show, children }) => {
   const showHideClassName = show ? "modal display-block" : "modal display-none";
@@ -22,11 +22,14 @@ const BookEditModal = ({ hideModal, show, children }) => {
             <Card.Content>
               <Card.Description>Authors:</Card.Description> <br />
               <Card.Description>Genre:</Card.Description> <br />
-              <Card.Description>Description:</Card.Description>
+              <Form>
+                <TextArea autoHeight placeholder="Description" />
+              </Form>
             </Card.Content>
           </Card.Content>
           <Card.Content extra>
-            <button onClick={hideModal}>close</button>
+            <button onClick={hideModal}>Close</button>
+            <button onClick={hideModal}>Update</button>
           </Card.Content>
         </Card>
       </section>

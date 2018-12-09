@@ -2,6 +2,7 @@ body {
   background: lemonchiffon;
 }
 
+/*Navbar*/
 .ui.menu:first-child {
   font-size: 1.2rem;
   background: white;
@@ -17,7 +18,9 @@ body {
   margin-top: .7rem;
   border: 1px #ccc solid;
 }
+/*end of Navbar*/
 
+/*Cards*/
 .ui.card {
   display: inline-block !important;
   margin: 2% -12% !important;
@@ -28,10 +31,7 @@ body {
 
 .ui.card.user1 {
   margin-top: 7rem !important;
-}
-
-.ui.card.user2 {
-  margin-left: 21.5% !important;
+  margin-right: -14rem !important;
 }
 
 .ui.card>.image {

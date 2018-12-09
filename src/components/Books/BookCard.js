@@ -1,9 +1,8 @@
 import React from "react";
 import BookHeader from "./BookHeader";
 import BookEditModal from "./BookEditModal/BookEditModal";
-import BookEditForm from "./BookEditModal/BookEditModal";
 import { Card, Icon, Image, Divider } from "semantic-ui-react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+// import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 const style = {
   cardWidth: {
@@ -35,7 +34,6 @@ const BookCard = ({ books, fetchBooks, deleteBook, showModal, show, hideModal, f
           </Card.Content>
           <Card.Content extra>
           <BookEditModal show={show} handleClose={hideModal}>
-          <BookEditForm/>
           </BookEditModal>
             <a href="/" className="edit" onClick={showModal} id={book.id}>
               <Icon name="edit" float="right" />

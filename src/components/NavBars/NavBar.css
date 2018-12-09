@@ -1,0 +1,15 @@
+.ui.menu:first-child {
+  font-size: 1.2rem;
+  background: white;
+}
+
+.item>img {
+  width: 8.5rem !important;
+}
+
+.ui.small.image.avatar {
+  width: 3.4rem;
+  height: 3.3rem;
+  margin-top: .7rem;
+  border: 1px #ccc solid;
+}
