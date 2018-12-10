@@ -1,6 +1,6 @@
 import React from "react";
 import BookHeader from "./BookHeader";
-import BookEditModal2 from "./BookEditModal/BookEditModal2";
+import BookEditModal from "./BookEditModal/BookEditModal";
 import { Card, Icon, Image, Divider, Button } from "semantic-ui-react";
 // import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
@@ -9,16 +9,6 @@ const style = {
     width: "50%"
   }
 };
-
-// const BookCard = ({
-//   books,
-//   fetchBooks,
-//   deleteBook,
-//   showModal,
-//   show,
-//   hideModal,
-//   filterBooks
-// }) => {
 
 class BookCard extends React.Component {
   state = {
@@ -68,7 +58,7 @@ class BookCard extends React.Component {
               </Card.Content>
             </Card.Content>
             <Card.Content extra>
-              <BookEditModal2
+              <BookEditModal
                 book={book}
                 show={this.state.show}
                 hideModal={this.hideModal}

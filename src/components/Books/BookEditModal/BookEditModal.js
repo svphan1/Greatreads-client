@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import "./Modal.css";
-import { Card, Image, Divider, Form, TextArea } from "semantic-ui-react";
+import { Card, Image, Divider, Form } from "semantic-ui-react";
 
 class BookEditModal2 extends Component {
   state = {
+    id: "",
     title: "",
     genre: "",
     authors: "",
@@ -12,9 +13,11 @@ class BookEditModal2 extends Component {
   };
 
   componentDidMount() {
+    console.log("comp did mount", this.props)
     if (this.props.book) {
       this.setState(
         {
+          id: this.props.book.id,
           title: this.props.book.title,
           genre: this.props.book.genre,
           authors: this.props.book.authors,
@@ -22,7 +25,7 @@ class BookEditModal2 extends Component {
           coverUrl: this.props.book.coverUrl
         },
         () => {
-          console.log(this.state);
+          console.log("state", this.state);
         }
       );
     }
@@ -97,6 +100,7 @@ class BookEditModal2 extends Component {
                 value={this.state.title}
                 onChange={this.titleListener}
                 placeholder="Title"
+                id={book.id}
               />
               <Divider />
               <Card.Content>
@@ -111,14 +115,17 @@ class BookEditModal2 extends Component {
                   value={this.state.genre}
                   onChange={this.genreListener}
                   placeholder="Genre"
+                  id={book.id}
                 />
                 <Card.Description>Description:</Card.Description> <br />
                 <input
+                  value={this.state.description}
                   onChange={this.descriptionListener}
                   placeholder="Description"
                 />
                 <Card.Description>CoverUrl:</Card.Description> <br />
                 <input
+                  value={this.state.coverUrl}
                   onChange={this.coverUrlListener}
                   placeholder="Cover Url"
                 />

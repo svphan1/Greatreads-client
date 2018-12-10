@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import NavBar from "../components/NavBars/NavBar";
 import NavBarMain from "../components/NavBars/NavBarMain";
 import Home from "../components/Users/Home";
-import BookEditModal2 from "../components/Books/BookEditModal/BookEditModal2";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "./App.css";
 
@@ -83,8 +82,6 @@ class App extends Component {
   changeNavBar = () => {
     this.setState({ isLoggedIn: true });
   };
-
-
 
   render() {
     return (
