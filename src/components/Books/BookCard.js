@@ -10,7 +10,15 @@ const style = {
   }
 };
 
-const BookCard = ({ books, fetchBooks, deleteBook, showModal, show, hideModal, filterBooks }) => {
+const BookCard = ({
+  books,
+  fetchBooks,
+  deleteBook,
+  showModal,
+  show,
+  hideModal,
+  filterBooks
+}) => {
   const bookList = books => {
     return books.map(book => {
       return (
@@ -25,16 +33,17 @@ const BookCard = ({ books, fetchBooks, deleteBook, showModal, show, hideModal, f
             <Card.Header className="card-header">{book.title}</Card.Header>
             <Divider />
             <Card.Content>
-              <Card.Description>Author(s): {book.authors}</Card.Description> <br />
+              <Card.Description>Author(s): {book.authors}</Card.Description>{" "}
+              <br />
               <Card.Description>Genre: {book.genre}</Card.Description> <br />
               <Card.Description>
-                Description: <br/>{book.description}
+                Description: <br />
+                {book.description}
               </Card.Description>
             </Card.Content>
           </Card.Content>
           <Card.Content extra>
-          <BookEditModal show={show} handleClose={hideModal}>
-          </BookEditModal>
+            <BookEditModal books={books} show={show} handleClose={hideModal} />
             <a href="/" className="edit" onClick={showModal} id={book.id}>
               <Icon name="edit" float="right" />
               Edit

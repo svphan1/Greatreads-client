@@ -24,7 +24,9 @@ const BookEditModal = ({ hideModal, show, children }) => {
               <Card.Description>Genre:</Card.Description> <br />
               {/* <Form> */}
               <Card.Description>Description:</Card.Description> <br />
-                <TextArea autoHeight placeholder="Description" />
+              <TextArea autoHeight placeholder="Description" />
+              <Card.Description>CoverUrl:</Card.Description> <br />
+              <TextArea autoHeight placeholder="Description" />
               {/* </Form> */}
             </Card.Content>
           </Card.Content>
