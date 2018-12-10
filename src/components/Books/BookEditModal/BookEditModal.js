@@ -22,9 +22,10 @@ const BookEditModal = ({ hideModal, show, children }) => {
             <Card.Content>
               <Card.Description>Authors:</Card.Description> <br />
               <Card.Description>Genre:</Card.Description> <br />
-              <Form>
+              {/* <Form> */}
+              <Card.Description>Description:</Card.Description> <br />
                 <TextArea autoHeight placeholder="Description" />
-              </Form>
+              {/* </Form> */}
             </Card.Content>
           </Card.Content>
           <Card.Content extra>

@@ -1,5 +1,5 @@
 import React from "react";
-import "../style.css";
+import "./NavBar.css";
 import logo from "../../assets/greatreads.jpg";
 import user from "../../assets/user.png";
 import { Input, Menu, Image } from "semantic-ui-react";

@@ -1,5 +1,5 @@
 import React from "react";
-import "../style.css";
+import "./NavBar.css";
 import logo from "../../assets/greatreads.jpg";
 import { Input, Menu } from "semantic-ui-react";
 import BookCard from "../Books/BookCard";
@@ -26,18 +26,6 @@ const NavBarMain = ({
           to="/"
           onClick={window.location.reload}
         />
-        {/* <Menu.Item
-          as={Link}
-          name="Books"
-          to="/books"
-          onClick={showBooksHandler}
-        />
-        <Menu.Item
-          as={Link}
-          name="Authors"
-          to="/authors"
-          onClick={showBooksHandler}
-        /> */}
         <Menu.Menu position="right">
           <Menu.Item>
             <Input icon="search" placeholder="Search..." />

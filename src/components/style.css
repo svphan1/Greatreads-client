@@ -2,24 +2,6 @@ body {
   background: lemonchiffon;
 }
 
-/*Navbar*/
-.ui.menu:first-child {
-  font-size: 1.2rem;
-  background: white;
-}
-
-.item>img {
-  width: 8.5rem !important;
-}
-
-.ui.small.image.avatar {
-  width: 3.4rem;
-  height: 3.3rem;
-  margin-top: .7rem;
-  border: 1px #ccc solid;
-}
-/*end of Navbar*/
-
 /*Cards*/
 .ui.card {
   display: inline-block !important;
@@ -29,7 +11,7 @@ body {
   border: 1px #c9ba9b solid;
 }
 
-.ui.card.user1 {
+.ui.card.users {
   margin-top: 7rem !important;
   margin-right: -14rem !important;
 }
@@ -43,24 +25,6 @@ body {
   font-size: 1.3rem !important;
 }
 
-a.edit {
-  display: inline-block;
-  color: rgb(81, 81, 241) !important;
-}
-
-a.edit:hover {
-  transform: scale(1.1);
-}
-
-a.delete {
-  display: inline-block;
-  color: rgb(242, 63, 63) !important;
-}
-
-a.delete:hover {
-  transform: scale(1.1);
-}
-
 .ui.card>.image.authorbook {
   padding: .7rem !important;
   margin-bottom: 4rem;
@@ -71,6 +35,7 @@ a.delete:hover {
   margin-left: 27%;
 }
 
+/*Messages*/
 .ui.warning {
   background-color: white !important;
 }
@@ -88,6 +53,7 @@ a.delete:hover {
   background-color: white !important;
 }
 
+/*Buttons*/
 .ui.basic.button {
   margin-top: 2rem;
   margin-left: 47%;
@@ -125,19 +91,41 @@ a.delete:hover {
   background: rgb(195, 236, 195);
 }
 
+ /*Forms*/
 .ui.form {
   border: 1px #ccc solid;
   width: 50%;
   margin: 0 auto;
   padding: .5rem;
   border-radius: .5rem;
-  background: lightgrey;
+  background: rgb(236, 228, 155);
 }
 
+/*Card Headers*/
 .header {
   text-align: center;
 }
 
+/*Logo*/
 .item>img {
   border-radius: 10px !important;
+}
+
+/*Links*/
+a.edit {
+  display: inline-block;
+  color: rgb(81, 81, 241) !important;
+}
+
+a.edit:hover {
+  transform: scale(1.1);
+}
+
+a.delete {
+  display: inline-block;
+  color: rgb(242, 63, 63) !important;
+}
+
+a.delete:hover {
+  transform: scale(1.1);
 }
