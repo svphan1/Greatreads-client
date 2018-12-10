@@ -11,6 +11,24 @@ class BookEditModal2 extends Component {
     coverUrl: ""
   };
 
+  componentDidMount() {
+    if (this.props.book) {
+      this.setState(
+        {
+          title: this.props.book.title,
+          genre: this.props.book.genre,
+          authors: this.props.book.authors,
+          description: this.props.book.description,
+          coverUrl: this.props.book.coverUrl
+        },
+        () => {
+          console.log(this.state);
+        }
+      );
+    }
+    console.log(this.props.book.title);
+  }
+
   titleListener = e => {
     this.setState({ title: e.target.value });
     console.log(this.state.title);
@@ -38,24 +56,21 @@ class BookEditModal2 extends Component {
 
   updateBook = e => {
     e.preventDefault();
-
-    fetch(`http://localhost:3000/books/`, {
+    const id = e.target.id;
+    fetch(`http://localhost:3000/books/${id}`, {
       method: "PUT",
       mode: "cors",
       headers: {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        // id: this.props.location.state.currentBook.id,
         title: this.state.title,
         genre: this.state.genre,
         authors: this.state.authors,
         description: this.state.description,
         coverUrl: this.state.coverUrl
       })
-    })
-      .then(data => console.log(data))
-      .then(window.location.replace("http://localhost:3000/books/"));
+    }).then();
   };
 
   render() {
@@ -78,35 +93,33 @@ class BookEditModal2 extends Component {
             <Image floated="left" size="small" className="authorbook" />
             <Card.Content>
               <Card.Header>Title</Card.Header>
-              <TextArea
+              <input
+                value={this.state.title}
                 onChange={this.titleListener}
-                autoHeight
                 placeholder="Title"
               />
               <Divider />
               <Card.Content>
                 <Card.Description>Authors:</Card.Description> <br />
-                <TextArea
+                <input
+                  value={this.state.authors}
                   onChange={this.authorsListener}
-                  autoHeight
                   placeholder="Authors"
                 />
                 <Card.Description>Genre:</Card.Description> <br />
-                <TextArea
+                <input
+                  value={this.state.genre}
                   onChange={this.genreListener}
-                  autoHeight
                   placeholder="Genre"
                 />
                 <Card.Description>Description:</Card.Description> <br />
-                <TextArea
+                <input
                   onChange={this.descriptionListener}
-                  autoHeight
                   placeholder="Description"
                 />
                 <Card.Description>CoverUrl:</Card.Description> <br />
-                <TextArea
+                <input
                   onChange={this.coverUrlListener}
-                  autoHeight
                   placeholder="Cover Url"
                 />
               </Card.Content>

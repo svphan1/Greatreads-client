@@ -10,8 +10,7 @@ class App extends Component {
   state = {
     books: [],
     authors: [],
-    isLoggedIn: false,
-    show: false
+    isLoggedIn: false
   };
 
   fetchBooks = () => {
@@ -85,15 +84,7 @@ class App extends Component {
     this.setState({ isLoggedIn: true });
   };
 
-  showModal = (e) => {
-    e.preventDefault();
-    this.setState({ show: true });
-    console.log('modal')
-  };
 
-  hideModal = () => {
-    this.setState({ show: false });
-  };
 
   render() {
     return (
@@ -123,7 +114,6 @@ class App extends Component {
               filterAuthors={this.filterAuthors}
             />
           )}
-          <BookEditModal2 show={this.state.show} hideModal={this.hideModal} showModal={this.showModal}/>
           <Route
             exact
             path="/"
