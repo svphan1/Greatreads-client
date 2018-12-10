@@ -1,6 +1,6 @@
 import React from "react";
 import BookHeader from "./BookHeader";
-import BookEditModal from "./BookEditModal/BookEditModal";
+import BookEditModal2 from "./BookEditModal/BookEditModal2";
 import { Card, Icon, Image, Divider } from "semantic-ui-react";
 // import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
@@ -43,7 +43,7 @@ const BookCard = ({
             </Card.Content>
           </Card.Content>
           <Card.Content extra>
-            <BookEditModal books={books} show={show} handleClose={hideModal} />
+            <BookEditModal2 book={book} show={show} hideModal={hideModal} />
             <a href="/" className="edit" onClick={showModal} id={book.id}>
               <Icon name="edit" float="right" />
               Edit

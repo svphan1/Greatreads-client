@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import NavBar from "../components/NavBars/NavBar";
 import NavBarMain from "../components/NavBars/NavBarMain";
 import Home from "../components/Users/Home";
-import BookEditModal from "../components/Books/BookEditModal/BookEditModal";
+import BookEditModal2 from "../components/Books/BookEditModal/BookEditModal2";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "./App.css";
 
@@ -123,7 +123,7 @@ class App extends Component {
               filterAuthors={this.filterAuthors}
             />
           )}
-          <BookEditModal show={this.state.show} hideModal={this.hideModal} showModal={this.showModal}/>
+          <BookEditModal2 show={this.state.show} hideModal={this.hideModal} showModal={this.showModal}/>
           <Route
             exact
             path="/"
