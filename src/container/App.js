@@ -7,17 +7,8 @@ import "./App.css";
 
 class App extends Component {
   state = {
-    books: [],
     authors: [],
     isLoggedIn: false
-  };
-
-  fetchBooks = () => {
-    fetch("http://localhost:3000/books")
-      .then(response => response.json())
-      .then(data => {
-        this.setState({ books: data.books });
-      });
   };
 
   fetchAuthors = () => {
@@ -29,21 +20,8 @@ class App extends Component {
   };
 
   componentDidMount() {
-    this.fetchBooks();
     this.fetchAuthors();
   }
-
-  deleteBook = e => {
-    e.preventDefault();
-    const id = e.target.id;
-    fetch(`http://localhost:3000/books/${id}`, {
-      method: "DELETE",
-      mode: "cors",
-      headers: {
-        "Content-Type": "application/JSON"
-      }
-    }).then(this.fetchBooks);
-  };
 
   deleteAuthor = e => {
     e.preventDefault();
@@ -55,17 +33,6 @@ class App extends Component {
         "Content-Type": "application/JSON"
       }
     }).then(this.fetchAuthors);
-  };
-
-  filterBooks = () => {
-    this.setState({
-      books: this.state.books.sort((a, b) => {
-        let nameA = a.title.toLowerCase(),
-          nameB = b.title.toLowerCase();
-        if (nameA < nameB) return -1;
-        if (nameA > nameB) return 1;
-      })
-    });
   };
 
   filterAuthors = () => {
@@ -89,25 +56,18 @@ class App extends Component {
         <React.Fragment>
           {this.state.isLoggedIn ? (
             <NavBar
-              books={this.state.books}
               authors={this.state.authors}
-              fetchBooks={this.fetchBooks}
               fetchAuthors={this.fetchAuthors}
               deleteBook={this.deleteBook}
               deleteAuthor={this.deleteAuthor}
-              filterBooks={this.filterBooks}
               filterAuthors={this.filterAuthors}
-              showModal={this.showModal}
             />
           ) : (
             <NavBarMain
-              books={this.state.books}
               authors={this.state.authors}
-              fetchBooks={this.fetchBooks}
               fetchAuthors={this.fetchAuthors}
               deleteBook={this.deleteBook}
               deleteAuthor={this.deleteAuthor}
-              filterBooks={this.filterBooks}
               filterAuthors={this.filterAuthors}
             />
           )}

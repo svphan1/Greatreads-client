@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import BookCard2 from "./BookCard2";
+import BookHeader from "./BookHeader";
 
 class BookList extends Component {
   state = {
@@ -18,9 +19,26 @@ class BookList extends Component {
     this.fetchBooks();
   }
 
+  filterBooks = () => {
+    this.setState({
+      books: this.state.books.sort((a, b) => {
+        let nameA = a.title.toLowerCase(),
+          nameB = b.title.toLowerCase();
+        if (nameA < nameB) return -1;
+        if (nameA > nameB) return 1;
+      })
+    });
+  };
+
   render() {
+    console.log("books", this.state.books);
+    const { books, deleteBook, showModal } = this.props;
     return (
       <div>
+        <BookHeader
+          filterBooks={this.filterBooks}
+          fetchBooks={this.fetchBooks}
+        />
         {this.state.books.map(book => (
           <BookCard2 key={book.id} book={book} fetchBooks={this.fetchBooks} />
         ))}

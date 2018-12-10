@@ -21,7 +21,12 @@ class BookHeader extends Component {
           <Message.Header>My Bookshelf</Message.Header>
         </Message>
         <Button content="Filter Books" basic onClick={filterBooks} />
-        <Button content="Add Book" className="addBtn" basic onClick={this.toggleHidden} />
+        <Button
+          content="Add Book"
+          className="addBtn"
+          basic
+          onClick={this.toggleHidden}
+        />
         {!this.state.isHidden && (
           <BookAddForm
             fetchBooks={fetchBooks}
