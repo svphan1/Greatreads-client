@@ -3,7 +3,7 @@ import "./NavBar.css";
 import logo from "../../assets/greatreads.jpg";
 import user from "../../assets/user.png";
 import BookList from "../Books/BookList";
-import AuthorCard from "../Authors/AuthorCard";
+import AuthorList from "../Authors/AuthorList";
 import { Input, Menu, Image } from "semantic-ui-react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
@@ -56,7 +56,7 @@ const NavBar = ({
       <Route
         path="/authors"
         render={() => (
-          <AuthorCard
+          <AuthorList
             authors={authors}
             fetchAuthors={fetchAuthors}
             deleteAuthor={deleteAuthor}

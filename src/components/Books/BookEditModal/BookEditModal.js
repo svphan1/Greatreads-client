@@ -21,13 +21,9 @@ class BookEditModal2 extends Component {
           authors: this.props.book.authors,
           description: this.props.book.description,
           coverUrl: this.props.book.coverUrl
-        },
-        () => {
-          console.log("state", this.state);
         }
       );
     }
-    console.log(this.props.book.title);
   }
 
   titleListener = e => {
