@@ -1,6 +1,5 @@
 import React from "react";
 import { Message } from "semantic-ui-react";
-import NavBar from "../NavBars/NavBar";
 import MainUserCard from "./MainUserCard";
 import GuestUserCard from "./GuestUserCard";
 

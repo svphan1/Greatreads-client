@@ -8,7 +8,7 @@ body {
   margin: 2% -12% !important;
   margin-left: 25% !important;
   box-shadow: 3px 5px 2rem #ccc;
-  border: 2px #c9ba9b solid;
+  border: 1px #c9ba9b solid;
 }
 
 .ui.card.users {

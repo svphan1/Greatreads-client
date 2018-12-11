@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import BookEditModal from "./BookEditModal/BookEditModal";
-import { Card, Icon, Image, Divider, Button } from "semantic-ui-react";
+import { Card, Icon, Image, Divider } from "semantic-ui-react";
 
 const style = {
   cardWidth: {
@@ -25,7 +25,7 @@ class BookCard extends Component {
   deleteBook = e => {
     e.preventDefault();
     const id = e.target.id;
-    fetch(`http://localhost:3000/books/${id}`, {
+    fetch(`https://sleepy-dawn-91272.herokuapp.com/books/${id}`, {
       method: "DELETE",
       mode: "cors",
       headers: {
@@ -61,6 +61,7 @@ class BookCard extends Component {
           <BookEditModal
             book={book}
             show={this.state.show}
+            fetchBooks={fetchBooks}
             hideModal={this.hideModal}
           />
           <a className="edit" onClick={this.showModal} id={book.id}>

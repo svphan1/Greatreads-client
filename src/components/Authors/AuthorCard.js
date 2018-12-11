@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import AuthorEditModal from "./AuthorEditModal/AuthorEditModal";
-import { Card, Icon, Image, Divider, Button } from "semantic-ui-react";
+import { Card, Icon, Image, Divider } from "semantic-ui-react";
 
 const style = {
   cardWidth: {
@@ -25,7 +25,7 @@ class AuthorCard extends Component {
   deleteAuthor = e => {
     e.preventDefault();
     const id = e.target.id;
-    fetch(`http://localhost:3000/authors/${id}`, {
+    fetch(`https://sleepy-dawn-91272.herokuapp.com/authors/${id}`, {
       method: "DELETE",
       mode: "cors",
       headers: {
@@ -60,6 +60,7 @@ class AuthorCard extends Component {
           <AuthorEditModal
             author={author}
             show={this.state.show}
+            fetchAuthors={fetchAuthors}
             hideModal={this.hideModal}
           />
           <a className="edit" onClick={this.showModal}>

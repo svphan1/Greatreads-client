@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Form, Message } from "semantic-ui-react";
+import { Form } from "semantic-ui-react";
 import "../style.css";
 
 class AuthorAddForm extends Component {
@@ -29,7 +29,7 @@ class AuthorAddForm extends Component {
   postAuthor = e => {
     e.preventDefault();
 
-    fetch("http://localhost:3000/authors", {
+    fetch("https://sleepy-dawn-91272.herokuapp.com/authors/", {
       method: "POST",
       mode: "cors",
       headers: {

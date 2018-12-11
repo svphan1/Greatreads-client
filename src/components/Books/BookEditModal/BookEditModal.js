@@ -26,33 +26,28 @@ class BookEditModal2 extends Component {
 
   titleListener = e => {
     this.setState({ title: e.target.value });
-    console.log(this.state.title);
   };
 
   genreListener = e => {
     this.setState({ genre: e.target.value });
-    console.log(this.state.genre);
   };
 
   authorsListener = e => {
     this.setState({ authors: e.target.value });
-    console.log(this.state.authors);
   };
 
   descriptionListener = e => {
     this.setState({ description: e.target.value });
-    console.log(this.state.description);
   };
 
   coverUrlListener = e => {
     this.setState({ coverUrl: e.target.value });
-    console.log(this.state.coverUrl);
   };
 
   updateBook = e => {
     e.preventDefault();
     const id = e.target.id;
-    fetch(`http://localhost:3000/books/${id}`, {
+    fetch(`https://sleepy-dawn-91272.herokuapp.com/books/${id}`, {
       method: "PUT",
       mode: "cors",
       headers: {
@@ -65,11 +60,14 @@ class BookEditModal2 extends Component {
         description: this.state.description,
         coverUrl: this.state.coverUrl
       })
-    }).then();
+    })
+      .then(res => res.json())
+      .then(this.props.fetchBooks)
+      .then(this.props.hideModal);
   };
 
   render() {
-    const { book, hideModal, show, children } = this.props;
+    const { book, hideModal, show, fetchBooks, children } = this.props;
 
     const showHideClassName = show
       ? "modal display-block"
@@ -136,7 +134,11 @@ class BookEditModal2 extends Component {
               <Button className="modal-btn" onClick={hideModal}>
                 Close
               </Button>
-              <Button className="modal-btn" onClick={this.updateBook}>
+              <Button
+                className="modal-btn"
+                id={book.id}
+                onClick={this.updateBook}
+              >
                 Update
               </Button>
             </Card.Content>

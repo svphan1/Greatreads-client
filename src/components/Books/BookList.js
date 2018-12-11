@@ -8,7 +8,7 @@ class BookList extends Component {
   };
 
   fetchBooks = () => {
-    fetch("http://localhost:3000/books")
+    fetch("https://sleepy-dawn-91272.herokuapp.com/books")
       .then(response => response.json())
       .then(data => {
         this.setState({ books: data.books });

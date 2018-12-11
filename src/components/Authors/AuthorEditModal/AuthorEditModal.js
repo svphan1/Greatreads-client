@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./AuthorModal.css";
-import { Card, Image, Divider, Form, Button } from "semantic-ui-react";
+import { Card, Image, Divider, Button } from "semantic-ui-react";
 
 class AuthorEditModal extends Component {
   state = {
@@ -23,45 +23,44 @@ class AuthorEditModal extends Component {
 
   firstNameListener = e => {
     this.setState({ firstName: e.target.value });
-    console.log(this.state.firstName);
   };
 
   lastNameListener = e => {
     this.setState({ lastName: e.target.value });
-    console.log(this.state.lastName);
   };
 
   biographyListener = e => {
     this.setState({ biography: e.target.value });
-    console.log(this.state.biography);
   };
 
   portraitUrlListener = e => {
     this.setState({ portraitUrl: e.target.value });
-    console.log(this.state.portraitUrl);
   };
 
   updateAuthor = e => {
     e.preventDefault();
     const id = e.target.id;
-    fetch(`http://localhost:3000/authors/${id}`, {
+    console.log(e.target.id);
+    fetch(`https://sleepy-dawn-91272.herokuapp.com/authors/${id}`, {
       method: "PUT",
       mode: "cors",
       headers: {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        title: this.state.title,
-        genre: this.state.genre,
-        authors: this.state.authors,
-        description: this.state.description,
-        coverUrl: this.state.coverUrl
+        firstName: this.state.firstName,
+        lastName: this.state.lastName,
+        biography: this.state.biography,
+        portraitUrl: this.state.portraitUrl
       })
-    }).then();
+    })
+      .then(res => res.json())
+      .then(this.props.fetchAuthors)
+      .then(this.props.hideModal);
   };
 
   render() {
-    const { author, hideModal, show, children } = this.props;
+    const { author, hideModal, show, fetchAuthors, children } = this.props;
 
     const showHideClassName = show
       ? "modal display-block"
@@ -120,7 +119,11 @@ class AuthorEditModal extends Component {
               <Button className="modal-btn" onClick={hideModal}>
                 Close
               </Button>
-              <Button className="modal-btn" onClick={this.updateAuthor}>
+              <Button
+                className="modal-btn"
+                id={author.id}
+                onClick={this.updateAuthor}
+              >
                 Update
               </Button>
             </Card.Content>

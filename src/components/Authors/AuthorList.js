@@ -8,7 +8,7 @@ class AuthorList extends Component {
   };
 
   fetchAuthors = () => {
-    fetch("http://localhost:3000/authors")
+    fetch("https://sleepy-dawn-91272.herokuapp.com/authors")
       .then(response => response.json())
       .then(data => {
         this.setState({ authors: data.authors });
@@ -40,7 +40,7 @@ class AuthorList extends Component {
         {this.state.authors.map(author => (
           <AuthorCard
             author={author}
-            id={author.id}
+            key={author.id}
             fetchAuthors={this.fetchAuthors}
           />
         ))}

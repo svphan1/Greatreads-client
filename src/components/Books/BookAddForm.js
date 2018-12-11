@@ -33,7 +33,7 @@ class BookAddForm extends Component {
   postBook = e => {
     e.preventDefault();
 
-    fetch("http://localhost:3000/books", {
+    fetch("https://sleepy-dawn-91272.herokuapp.com/books", {
       method: "POST",
       mode: "cors",
       headers: {
