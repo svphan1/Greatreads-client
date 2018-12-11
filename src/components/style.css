@@ -8,7 +8,7 @@ body {
   margin: 2% -12% !important;
   margin-left: 25% !important;
   box-shadow: 3px 5px 2rem #ccc;
-  border: 1px #c9ba9b solid;
+  border: 2px #c9ba9b solid;
 }
 
 .ui.card.users {
@@ -59,7 +59,7 @@ body {
   margin-left: 47%;
   margin-bottom: 1rem;
   box-shadow: 2px 2px 5px #ccc;
-  background: darkseagreen !important;
+  background: rgb(120, 163, 120) !important;
 }
 
 .ui.basic.button.addBtn {
@@ -98,7 +98,6 @@ body {
   margin: 0 auto;
   padding: .5rem;
   border-radius: .5rem;
-  background: rgb(236, 228, 155);
 }
 
 /*Card Headers*/
@@ -114,7 +113,7 @@ body {
 /*Links*/
 a.edit {
   display: inline-block;
-  color: rgb(81, 81, 241) !important;
+  color: darkseagreen !important;
 }
 
 a.edit:hover {

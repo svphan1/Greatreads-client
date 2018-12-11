@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./BookModal.css";
-import { Card, Image, Divider, Form, Button } from "semantic-ui-react";
+import { Card, Image, Divider, Button } from "semantic-ui-react";
 
 class BookEditModal2 extends Component {
   state = {

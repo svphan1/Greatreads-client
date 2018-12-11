@@ -38,7 +38,7 @@ class BookList extends Component {
           fetchBooks={this.fetchBooks}
         />
         {this.state.books.map(book => (
-          <BookCard book={book} id={book.id} fetchBooks={this.fetchBooks} />
+          <BookCard book={book} key={book.id} fetchBooks={this.fetchBooks} />
         ))}
       </div>
     );
