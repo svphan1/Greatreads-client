@@ -1,17 +1,14 @@
 import React from "react";
 import "./NavBar.css";
 import logo from "../../assets/greatreads.jpg";
-import { Input, Menu } from "semantic-ui-react";
-import BookCard from "../Books/BookCard";
+import BookList from "../Books/BookList";
 import AuthorCard from "../Authors/AuthorCard";
+import { Input, Menu } from "semantic-ui-react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 const NavBarMain = ({
-  books,
   authors,
-  fetchBooks,
   fetchAuthors,
-  deleteBook,
   deleteAuthor
 }) => {
   return (
@@ -41,10 +38,7 @@ const NavBarMain = ({
       <Route
         path="/books"
         render={() => (
-          <BookCard
-            books={books}
-            fetchBooks={fetchBooks}
-            deleteBook={deleteBook}
+          <BookList
           />
         )}
       />

@@ -58,7 +58,6 @@ class App extends Component {
             <NavBar
               authors={this.state.authors}
               fetchAuthors={this.fetchAuthors}
-              deleteBook={this.deleteBook}
               deleteAuthor={this.deleteAuthor}
               filterAuthors={this.filterAuthors}
             />
@@ -66,7 +65,6 @@ class App extends Component {
             <NavBarMain
               authors={this.state.authors}
               fetchAuthors={this.fetchAuthors}
-              deleteBook={this.deleteBook}
               deleteAuthor={this.deleteAuthor}
               filterAuthors={this.filterAuthors}
             />

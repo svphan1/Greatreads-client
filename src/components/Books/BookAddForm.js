@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import { Form, Message } from "semantic-ui-react";
+import { Form } from "semantic-ui-react";
 
 class BookAddForm extends Component {
   state = {
-    bookList: [],
     title: "",
     genre: "",
     authors: "",

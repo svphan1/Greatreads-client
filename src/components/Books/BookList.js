@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import BookCard2 from "./BookCard2";
+import BookCard from "./BookCard";
 import BookHeader from "./BookHeader";
 
 class BookList extends Component {
@@ -31,7 +31,7 @@ class BookList extends Component {
   };
 
   render() {
-    console.log("books", this.state.books);
+    // console.log("books", this.state.books);
     const { books, deleteBook, showModal } = this.props;
     return (
       <div>
@@ -40,7 +40,7 @@ class BookList extends Component {
           fetchBooks={this.fetchBooks}
         />
         {this.state.books.map(book => (
-          <BookCard2 key={book.id} book={book} fetchBooks={this.fetchBooks} />
+          <BookCard book={book} id={book.id} fetchBooks={this.fetchBooks} />
         ))}
       </div>
     );

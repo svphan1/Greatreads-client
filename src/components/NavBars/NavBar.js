@@ -2,20 +2,16 @@ import React from "react";
 import "./NavBar.css";
 import logo from "../../assets/greatreads.jpg";
 import user from "../../assets/user.png";
-import { Input, Menu, Image } from "semantic-ui-react";
 import BookList from "../Books/BookList";
 import AuthorCard from "../Authors/AuthorCard";
+import { Input, Menu, Image } from "semantic-ui-react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 const NavBar = ({
-  // books,
   authors,
   fetchAuthors,
-  deleteBook,
   deleteAuthor,
-  filterBooks,
   filterAuthors,
-  showModal
 }) => {
   return (
     <React.Fragment>
@@ -54,11 +50,7 @@ const NavBar = ({
       <Route
         path="/books"
         render={() => (
-          <BookList
-            deleteBook={deleteBook}
-            filterBooks={filterBooks}
-            showModal={showModal}
-          />
+          <BookList />
         )}
       />
       <Route
