@@ -100,8 +100,8 @@ class AuthorEditModal extends Component {
               />
               <Divider />
               <Card.Content>
-                <h5>Biography:</h5>
-                <input
+                <h5>About:</h5>
+                <textarea
                   className="input-body"
                   value={this.state.biography}
                   onChange={this.biographyListener}

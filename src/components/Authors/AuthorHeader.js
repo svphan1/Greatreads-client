@@ -21,7 +21,12 @@ class AuthorHeader extends Component {
           <Message.Header>Favorite Authors</Message.Header>
         </Message>
         <Button content="Filter Authors" basic onClick={filterAuthors} />
-        <Button content="Add Author" className="addBtn" basic onClick={this.toggleHidden} />
+        <Button
+          content="Add Author"
+          className="addBtn"
+          basic
+          onClick={this.toggleHidden}
+        />
         {!this.state.isHidden && (
           <AuthorAddForm
             fetchAuthors={fetchAuthors}

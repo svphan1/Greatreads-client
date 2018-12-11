@@ -38,7 +38,11 @@ class AuthorList extends Component {
           fetchAuthors={this.fetchAuthors}
         />
         {this.state.authors.map(author => (
-          <AuthorCard author={author} id={author.id} fetchAuthors={this.fetchAuthors} />
+          <AuthorCard
+            author={author}
+            id={author.id}
+            fetchAuthors={this.fetchAuthors}
+          />
         ))}
       </div>
     );

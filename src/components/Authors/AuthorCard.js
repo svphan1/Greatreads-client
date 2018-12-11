@@ -51,7 +51,7 @@ class AuthorCard extends Component {
           <Divider />
           <Card.Content>
             <Card.Description>
-              Biography: <br />
+              <h4>About:</h4>
               {author.biography}
             </Card.Description>
           </Card.Content>

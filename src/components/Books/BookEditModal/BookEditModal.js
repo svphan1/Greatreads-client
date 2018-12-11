@@ -13,16 +13,14 @@ class BookEditModal2 extends Component {
 
   componentDidMount() {
     if (this.props.book) {
-      this.setState(
-        {
-          id: this.props.book.id,
-          title: this.props.book.title,
-          genre: this.props.book.genre,
-          authors: this.props.book.authors,
-          description: this.props.book.description,
-          coverUrl: this.props.book.coverUrl
-        }
-      );
+      this.setState({
+        id: this.props.book.id,
+        title: this.props.book.title,
+        genre: this.props.book.genre,
+        authors: this.props.book.authors,
+        description: this.props.book.description,
+        coverUrl: this.props.book.coverUrl
+      });
     }
   }
 
@@ -87,7 +85,12 @@ class BookEditModal2 extends Component {
         <section className="modal-main">
           {children}
           <Card style={style.cardWidth}>
-            <Image floated="left" size="small" src={this.props.book.coverUrl} className="authorbook-modal-book" />
+            <Image
+              floated="left"
+              size="small"
+              src={this.props.book.coverUrl}
+              className="authorbook-modal-book"
+            />
             <Card.Content>
               <Card.Header className="modal-header">Title</Card.Header>
               <input
@@ -114,7 +117,7 @@ class BookEditModal2 extends Component {
                   placeholder="Genre"
                 />
                 <h5>Description:</h5>
-                <input
+                <textarea
                   className="input-body"
                   value={this.state.description}
                   onChange={this.descriptionListener}
@@ -130,8 +133,12 @@ class BookEditModal2 extends Component {
               </Card.Content>
             </Card.Content>
             <Card.Content extra>
-              <Button className="modal-btn" onClick={hideModal}>Close</Button>
-              <Button className="modal-btn" onClick={this.updateBook}>Update</Button>
+              <Button className="modal-btn" onClick={hideModal}>
+                Close
+              </Button>
+              <Button className="modal-btn" onClick={this.updateBook}>
+                Update
+              </Button>
             </Card.Content>
           </Card>
         </section>

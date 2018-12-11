@@ -13,3 +13,8 @@
   margin-top: .7rem;
   border: 1px #ccc solid;
 }
+
+a.item:hover {
+  background: darkseagreen !important;
+  color: white !important;
+}
