@@ -31,8 +31,6 @@ class BookList extends Component {
   };
 
   render() {
-    // console.log("books", this.state.books);
-    const { books, deleteBook, showModal } = this.props;
     return (
       <div>
         <BookHeader

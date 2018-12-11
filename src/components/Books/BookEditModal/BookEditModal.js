@@ -4,7 +4,6 @@ import { Card, Image, Divider, Form } from "semantic-ui-react";
 
 class BookEditModal2 extends Component {
   state = {
-    id: "",
     title: "",
     genre: "",
     authors: "",
@@ -13,7 +12,6 @@ class BookEditModal2 extends Component {
   };
 
   componentDidMount() {
-    console.log("comp did mount", this.props)
     if (this.props.book) {
       this.setState(
         {
@@ -115,7 +113,6 @@ class BookEditModal2 extends Component {
                   value={this.state.genre}
                   onChange={this.genreListener}
                   placeholder="Genre"
-                  id={book.id}
                 />
                 <Card.Description>Description:</Card.Description> <br />
                 <input
