@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import "./Modal.css";
-import { Card, Image, Divider, Form } from "semantic-ui-react";
+import "./BookModal.css";
+import { Card, Image, Divider, Form, Button } from "semantic-ui-react";
 
 class BookEditModal2 extends Component {
   state = {
@@ -87,10 +87,11 @@ class BookEditModal2 extends Component {
         <section className="modal-main">
           {children}
           <Card style={style.cardWidth}>
-            <Image floated="left" size="small" className="authorbook" />
+            <Image floated="left" size="small" src={this.props.book.coverUrl} className="authorbook-modal-book" />
             <Card.Content>
-              <Card.Header>Title</Card.Header>
+              <Card.Header className="modal-header">Title</Card.Header>
               <input
+                className="input-header-modal"
                 value={this.state.title}
                 onChange={this.titleListener}
                 placeholder="Title"
@@ -98,26 +99,30 @@ class BookEditModal2 extends Component {
               />
               <Divider />
               <Card.Content>
-                <Card.Description>Authors:</Card.Description> <br />
+                <h5>Authors:</h5>
                 <input
+                  className="input-authors"
                   value={this.state.authors}
                   onChange={this.authorsListener}
                   placeholder="Authors"
                 />
-                <Card.Description>Genre:</Card.Description> <br />
+                <h5>Genre:</h5>
                 <input
+                  className="input-body"
                   value={this.state.genre}
                   onChange={this.genreListener}
                   placeholder="Genre"
                 />
-                <Card.Description>Description:</Card.Description> <br />
+                <h5>Description:</h5>
                 <input
+                  className="input-body"
                   value={this.state.description}
                   onChange={this.descriptionListener}
                   placeholder="Description"
                 />
-                <Card.Description>CoverUrl:</Card.Description> <br />
+                <h5>CoverUrl:</h5>
                 <input
+                  className="input-body"
                   value={this.state.coverUrl}
                   onChange={this.coverUrlListener}
                   placeholder="Cover Url"
@@ -125,8 +130,8 @@ class BookEditModal2 extends Component {
               </Card.Content>
             </Card.Content>
             <Card.Content extra>
-              <button onClick={hideModal}>Close</button>
-              <button onClick={this.updateBook}>Update</button>
+              <Button className="modal-btn" onClick={hideModal}>Close</Button>
+              <Button className="modal-btn" onClick={this.updateBook}>Update</Button>
             </Card.Content>
           </Card>
         </section>

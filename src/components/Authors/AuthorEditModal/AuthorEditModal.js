@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import "./Modal.css";
-import { Card, Image, Divider, Form } from "semantic-ui-react";
+import "./AuthorModal.css";
+import { Card, Image, Divider, Form, Button } from "semantic-ui-react";
 
 class AuthorEditModal extends Component {
   state = {
@@ -12,14 +12,12 @@ class AuthorEditModal extends Component {
 
   componentDidMount() {
     if (this.props.author) {
-      this.setState(
-        {
-          firstName: this.props.author.firstName,
-          lastName: this.props.author.lastName,
-          biography: this.props.author.biography,
-          portraitUrl: this.props.author.portraitUrl
-        }
-      );
+      this.setState({
+        firstName: this.props.author.firstName,
+        lastName: this.props.author.lastName,
+        biography: this.props.author.biography,
+        portraitUrl: this.props.author.portraitUrl
+      });
     }
   }
 
@@ -79,30 +77,39 @@ class AuthorEditModal extends Component {
         <section className="modal-main">
           {children}
           <Card style={style.cardWidth}>
-            <Image floated="left" size="small" className="authorbook" />
+            <Image
+              floated="left"
+              size="small"
+              src={this.props.author.portraitUrl}
+              className="authorbook-modal"
+            />
             <Card.Content>
-              <Card.Header>First Name</Card.Header>
+              <Card.Header className="modal-header">First Name</Card.Header>
               <input
+                className="input-header-modal"
                 value={this.state.firstName}
                 onChange={this.firstNameListener}
                 placeholder="First Name"
               />
-              <Card.Header>First Name</Card.Header>
+              <Card.Header className="modal-header">Last Name</Card.Header>
               <input
+                className="input-header-modal"
                 value={this.state.lastName}
                 onChange={this.lastNameListener}
                 placeholder="Last Name"
               />
               <Divider />
               <Card.Content>
-                <Card.Description>Biography:</Card.Description> <br />
+                <h5>Biography:</h5>
                 <input
+                  className="input-body"
                   value={this.state.biography}
                   onChange={this.biographyListener}
                   placeholder="Biography"
                 />
-                <Card.Description>Portrait Url:</Card.Description> <br />
+                <h5>Portrait Url:</h5>
                 <input
+                  className="input-body"
                   value={this.state.portraitUrl}
                   onChange={this.portraitUrlListener}
                   placeholder="Portrait Url"
@@ -110,8 +117,12 @@ class AuthorEditModal extends Component {
               </Card.Content>
             </Card.Content>
             <Card.Content extra>
-              <button onClick={hideModal}>Close</button>
-              <button onClick={this.updateAuthor}>Update</button>
+              <Button className="modal-btn" onClick={hideModal}>
+                Close
+              </Button>
+              <Button className="modal-btn" onClick={this.updateAuthor}>
+                Update
+              </Button>
             </Card.Content>
           </Card>
         </section>
