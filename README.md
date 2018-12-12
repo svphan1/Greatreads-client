@@ -1,6 +1,6 @@
 # Greatreads
 
-Greatreads is a application for book lovers to save and store their favorite books and authors.
+Greatreads is an application for book lovers to save and store their favorite books and authors.
 
 As a user, you are able to: <br />
 -Choose a login <br />
