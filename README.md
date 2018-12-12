@@ -12,8 +12,8 @@ As a user, you are able to: <br />
 React, Semantic-UI, CSS3, Node.js, Express, PostgreSQL, Knex. 
 
 ### Deployed Links:
-[Demo](http://son-greatreads.surge.sh/)
-[Deployed database](https://sleepy-dawn-91272.herokuapp.com/)
+[Demo](http://son-greatreads.surge.sh/) <br />
+[Deployed database](https://sleepy-dawn-91272.herokuapp.com/) <br />
 [Link to database repo](https://github.com/svphan1/Greatreads-server)
 
 Screenshots:
