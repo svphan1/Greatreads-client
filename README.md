@@ -1,8 +1,8 @@
 # Greatreads
 
 Greatreads is an application for book lovers to save and store their favorite books and authors.
-Upon signing in, users are presented with their bookshelf where they are able to filter, add, delete, and edit books.
-The favorite authors screen also has the same functionality. Users are also able to add photo medi links in the edit screen.
+Upon signing in, users are presented with their bookshelf where they are able to add, delete, edit, and filter books by name.
+The favorite authors screen also has the same functionality. Users are also able to add photo media links in the edit screen.
 
 ### Technologies: 
 React, JavaScript, Semantic-UI, CSS3, Node.js, Express, PostgreSQL, Knex. 
