@@ -9,7 +9,7 @@ As a user, you are able to: <br />
 -Filter books and authors by name <br />
 
 ### Technologies: 
-React, Semantic-UI, CSS3, Node.js, Express, PostgreSQL, Knex. 
+React, JavaScript, Semantic-UI, CSS3, Node.js, Express, PostgreSQL, Knex. 
 
 ### Deployed Links:
 [Demo](http://son-greatreads.surge.sh/) <br />
